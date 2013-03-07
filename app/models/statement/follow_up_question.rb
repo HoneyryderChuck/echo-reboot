@@ -1,4 +1,4 @@
-class FollowUpQuestion < Statement
+class FollowUpQuestion < ActiveRecord::Base
   has_one :question
   belongs_to :statement, polymorphic: true
 

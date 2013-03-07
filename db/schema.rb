@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "background_infos", :force => true do |t|
     t.integer "statement_id",   :null => false
     t.string  "statement_type", :null => false
+    t.integer "creator_id"
   end
 
   create_table "contra_argument_alternatives", :force => true do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
 
   create_table "contra_arguments", :force => true do |t|
     t.integer "proposal_id", :null => false
+    t.integer "creator_id"
   end
 
   create_table "follow_up_questions", :force => true do |t|
@@ -35,10 +37,12 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "improvement_alternatives", :force => true do |t|
     t.integer "improvement_id"
     t.integer "alternative_id"
+    t.integer "creator_id"
   end
 
   create_table "improvements", :force => true do |t|
     t.integer "proposal_id", :null => false
+    t.integer "creator_id"
   end
 
   create_table "pro_argument_alternatives", :force => true do |t|
@@ -48,19 +52,26 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
 
   create_table "pro_arguments", :force => true do |t|
     t.integer "proposal_id", :null => false
+    t.integer "creator_id"
   end
 
   create_table "proposal_alternatives", :force => true do |t|
     t.integer "proposal_id"
     t.integer "alternative_id"
+    t.integer "creator_id"
   end
 
   create_table "proposals", :force => true do |t|
     t.integer "question_id", :null => false
+    t.integer "creator_id"
   end
 
   create_table "questions", :force => true do |t|
     t.integer "follow_up_question_id"
+    t.integer "creator_id"
+  end
+
+  create_table "users", :force => true do |t|
   end
 
 end
