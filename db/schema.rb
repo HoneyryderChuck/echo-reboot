@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
     t.integer  "statement_id",   :null => false
     t.string   "statement_type", :null => false
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -29,13 +30,14 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "contra_arguments", :force => true do |t|
     t.integer  "proposal_id", :null => false
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "echos", :force => true do |t|
-    t.integer  "echoable_id"
-    t.string   "echoable_type"
+    t.integer  "echoable_id",                    :null => false
+    t.string   "echoable_type",                  :null => false
     t.integer  "visitor_count",   :default => 0
     t.integer  "supporter_count", :default => 0
     t.datetime "created_at",                     :null => false
@@ -58,8 +60,12 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "improvements", :force => true do |t|
     t.integer  "proposal_id", :null => false
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "nodes", :force => true do |t|
   end
 
   create_table "pro_argument_alternatives", :force => true do |t|
@@ -70,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "pro_arguments", :force => true do |t|
     t.integer  "proposal_id", :null => false
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -83,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "proposals", :force => true do |t|
     t.integer  "question_id", :null => false
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -90,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "questions", :force => true do |t|
     t.integer  "follow_up_question_id"
     t.integer  "creator_id"
+    t.integer  "node_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end

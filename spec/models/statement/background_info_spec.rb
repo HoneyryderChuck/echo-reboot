@@ -4,11 +4,10 @@ require "./spec/spec_helper"
 describe BackgroundInfo do
   describe "associations" do
     it { should belong_to(:statement) }
-    it { should belong_to(:creator) }
+
   end
 
   describe "validations" do
     it { should validate_presence_of(:statement) }
-    it { should validate_presence_of(:creator) }
   end
 end

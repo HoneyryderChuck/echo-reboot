@@ -8,11 +8,9 @@ describe Proposal do
     it { should have_many(:improvements) }
     it { should have_many(:background_infos) }
     it { should have_many(:follow_up_questions) }
-    it { should belong_to(:creator) }
   end
 
   describe "validations" do
     it { should validate_presence_of(:question) }
-    it { should validate_presence_of(:creator) }
   end
 end

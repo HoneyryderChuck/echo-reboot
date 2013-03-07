@@ -3,26 +3,31 @@ class StatementTables < ActiveRecord::Migration
     create_table :questions do |t|
       t.references :follow_up_question
       t.references :creator
+      t.references :node
       t.timestamps
     end
     create_table :proposals do |t|
       t.references :question, null: false
       t.references :creator
+      t.references :node
       t.timestamps
     end
     create_table :improvements do |t|
       t.references :proposal, null: false
       t.references :creator
+      t.references :node
       t.timestamps
     end
     create_table :pro_arguments do |t|
       t.references :proposal, null: false
       t.references :creator
+      t.references :node
       t.timestamps
     end
     create_table :contra_arguments do |t|
       t.references :proposal, null: false
       t.references :creator
+      t.references :node
       t.timestamps
     end
     create_table :follow_up_questions do |t|
@@ -32,9 +37,13 @@ class StatementTables < ActiveRecord::Migration
     create_table :background_infos do |t|
       t.references :statement, polymorphic: true, null: false
       t.references :creator
+      t.references :node
       t.timestamps
     end
 
+    create_table :nodes do |t|
+
+    end
 
     # join tables for belongs to many relations
     create_table :proposal_alternatives do |t|

@@ -3,6 +3,10 @@ class Statement < ActiveRecord::Base
 
   belongs_to :creator,  class_name: "User"
   has_one    :echo,     as: :echoable,        dependent: :destroy
+  belongs_to :node,     dependent: :destroy
 
-  validates :creator, :echo, presence: true
+  validates :node, :creator, :echo, presence: true
+  validates :node, associated: true
+
 end
+
