@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(:version => 20130307135302) do
 
   create_table "background_infos", :force => true do |t|
-    t.integer "statement_id",   :null => false
-    t.string  "statement_type", :null => false
-    t.integer "creator_id"
+    t.integer  "statement_id",   :null => false
+    t.string   "statement_type", :null => false
+    t.integer  "creator_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "contra_argument_alternatives", :force => true do |t|
@@ -25,13 +27,26 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   end
 
   create_table "contra_arguments", :force => true do |t|
-    t.integer "proposal_id", :null => false
-    t.integer "creator_id"
+    t.integer  "proposal_id", :null => false
+    t.integer  "creator_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "echos", :force => true do |t|
+    t.integer  "echoable_id"
+    t.string   "echoable_type"
+    t.integer  "visitor_count",   :default => 0
+    t.integer  "supporter_count", :default => 0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "follow_up_questions", :force => true do |t|
-    t.integer "statement_id",   :null => false
-    t.string  "statement_type", :null => false
+    t.integer  "statement_id",   :null => false
+    t.string   "statement_type", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "improvement_alternatives", :force => true do |t|
@@ -41,8 +56,10 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   end
 
   create_table "improvements", :force => true do |t|
-    t.integer "proposal_id", :null => false
-    t.integer "creator_id"
+    t.integer  "proposal_id", :null => false
+    t.integer  "creator_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "pro_argument_alternatives", :force => true do |t|
@@ -51,8 +68,10 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   end
 
   create_table "pro_arguments", :force => true do |t|
-    t.integer "proposal_id", :null => false
-    t.integer "creator_id"
+    t.integer  "proposal_id", :null => false
+    t.integer  "creator_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "proposal_alternatives", :force => true do |t|
@@ -62,16 +81,31 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   end
 
   create_table "proposals", :force => true do |t|
-    t.integer "question_id", :null => false
-    t.integer "creator_id"
+    t.integer  "question_id", :null => false
+    t.integer  "creator_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "questions", :force => true do |t|
-    t.integer "follow_up_question_id"
-    t.integer "creator_id"
+    t.integer  "follow_up_question_id"
+    t.integer  "creator_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "user_echos", :force => true do |t|
+    t.integer  "echo_id",                       :null => false
+    t.integer  "user_id",                       :null => false
+    t.boolean  "visited",    :default => false
+    t.boolean  "supported",  :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "users", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
