@@ -8,6 +8,11 @@ gem 'rails', '3.2.12'
 gem 'mysql2'
 
 
+group :development do
+  gem 'pry-rails'
+  gem 'awesome_print'
+end
+
 group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
@@ -15,6 +20,7 @@ group :test do
   gem "shoulda"
   gem "database_cleaner"
 end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
