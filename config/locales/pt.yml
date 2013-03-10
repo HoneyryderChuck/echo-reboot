@@ -1,0 +1,56 @@
+pt:
+  enumerations:
+    about_categories:
+      core_team: Equipa-Núcleo
+      supporters: Pessoal Externo & Colaboradores
+      translators: Tradutores
+      interns: Estagiários
+      partners: Parceiros
+      technology_partners: Parceiros Tecnológicos
+      financial_partners: Parceiros Financeiros
+      strategic_partners: Parceiros Estratégicos
+      thematic_partners: Parceiros Temáticos
+    info_type:
+      article: Artigo
+      paper: Artigo Científico
+      book: Livro
+      photo: Fotografia
+      video: Video
+      law: Legislação
+      document: Documento
+    language_levels:
+      mother_tongue: Língua Materna
+      advanced: Avançado
+      intermediate: Intermédio
+      basic: Básico
+    languages:
+      en: Inglês
+      de: Alemão
+      fr: Francês
+      pt: Português
+      es: Espanhol
+      hu: Húngaro
+    organization_types:
+      ngo: ONG
+      political: Política
+      scientific: Científica
+      trade_union: Sindicato
+      profit_driven_business: Firma com fins lucrativos
+    statement_actions:
+      new: Novo
+      edit: Editar
+      translate: Traduzir
+      incorporate: Incorporar
+    statement_states:
+      new: Novo
+      published: Publicado
+    tag_contexts:
+      affection: Afeição
+      engagement: Compromisso
+      expertise: Especialidade
+      decision_making: Decisão
+      field_of_work: Domínio de Trabalho
+      field_of_activity: Domínio de Actividade
+      topic: Tópico
+
+

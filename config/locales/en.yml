@@ -2,4 +2,60 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  enumerations:
+    about_categories:
+      core_team: Core Team
+      supporters: External Staff & Supporters
+      translators: Translators
+      interns: Interns
+      alumni: Alumni
+      partners: Partners
+      technology_partners: Technology Partners
+      financial_partners: Financial Partners
+      strategic_partners: Strategic Partners
+      thematic_partners: Thematic Partners
+    info_type:
+      article: Article
+      paper: Paper
+      book: Book
+      audio: Audio
+      photo: Photo
+      video: Video
+      law: Law
+      document: Document
+    language_levels:
+      mother_tongue: Mother Tongue
+      advanced: Advanced
+      intermediate: Intermediate
+      basic: Basic
+    languages:
+      en: English
+      de: German
+      fr: French
+      pt: Portuguese
+      es: Spanish
+      hu: Hungarian
+    organization_types:
+      ngo: NGO
+      political: Political
+      scientific: Scientific
+      trade_union: Trade Union
+      social_business: Social Business
+      profit_driven_business: Profit-Driven Business
+    statement_actions:
+      new: New
+      edit: Edit
+      translate: Translate
+      incorporate: Incorporate
+    statement_states:
+      new: New
+      published: Published
+    tag_contexts:
+      affection: Affection
+      engagement: Engagement
+      expertise: Expertise
+      decision_making: Decision Making
+      field_of_work: Field of Work
+      field_of_activity: Field of Activity
+      topic: Topic
+

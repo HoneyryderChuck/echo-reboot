@@ -1,0 +1,56 @@
+de:
+  enumerations:
+    about_categories:
+      core_team: Kernteam
+      supporters: Externe Mitarbeiter & Unterstützer
+      translators: Übersetzer
+      interns: Praktikanten
+      partners: Partner
+      technology_partners: Technologiepartner
+      financial_partners: Finanzpartner
+      strategic_partners: Strategische Partner
+      thematic_partners: Thematische Partner
+    info_type:
+      article: Artikel
+      paper: Ausarbeitung
+      book: Buch
+      photo: Foto
+      video: Video
+      law: Rechtliches
+      document: Dokument
+    language_levels:
+      mother_tongue: Muttersprache
+      advanced: Fortgeschritten
+      intermediate: Mittelstufe
+      basic: Grundkenntnisse
+    languages:
+      en: Englisch
+      de: Deutsch
+      fr: Französisch
+      pt: Portugiesisch
+      es: Spanisch
+      hu: Ungarisch
+    organization_types:
+      ngo: NRO
+      political: Politisch
+      scientific: Wissenschaftlich
+      trade_union: Gewerkschaft
+      profit_driven_business: Gewinnorientierte Firma
+    statement_actions:
+      new: Neu
+      edit: Editieren
+      translate: Übersetzen
+      incorporate: Einfügen
+    statement_states:
+      new: Neu
+      published: Veröffentlicht
+    tag_contexts:
+      affection: Betroffenheit
+      engagement: Engagement
+      expertise: Expertise
+      decision_making: Entscheidung
+      field_of_work: Arbeitsfeld
+      field_of_activity: Betätigungsfeld
+      topic: Thema
+
+

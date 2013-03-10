@@ -1,0 +1,57 @@
+hu:
+  enumerations:
+    about_categories:
+      core_team: Belső Csapat
+      supporters: Külsősök & Támogatók
+      translators: Fordítók
+      interns: Gyakornokok
+      partners: Partnerek
+      technology_partners: Technológiai Partnerek
+      financial_partners: Pénzügyi Partnerek
+      strategic_partners: Stratégiai Partnerek
+      thematic_partners: Tematikus Partnerek
+    info_type:
+      article: Cikk
+      paper: Tudományos cikk
+      book: Könyv
+      audio: Hanganyag
+      photo: Fénykép
+      video: Videó
+      law: Jogszabály
+      document: Dokumentum
+    language_levels:
+      mother_tongue: Anyanyelv
+      advanced: Felsőfok
+      intermediate: Középfok
+      basic: Alapfok
+    languages:
+      en: Angol
+      de: Német
+      fr: Francia
+      pt: Portugál
+      es: Spanyol
+      hu: Magyar
+    organization_types:
+      ngo: Civil Szervezet
+      political: Politikai
+      scientific: Tudományos
+      trade_union: Szakszervezet
+      profit_driven_business: Profitorientált Cég
+    statement_actions:
+      new: Új
+      edit: Szerkesztem
+      translate: Lefordítom
+      incorporate: Összefésülöm
+    statement_states:
+      new: Új
+      published: Publikált
+    tag_contexts:
+      affection: Érintettség
+      engagement: Aktivitás
+      expertise: Szaktudás
+      decision_making: Döntéshozás
+      field_of_work: Munkaterület
+      field_of_activity: Aktivitási Terület
+      topic: Téma
+
+
