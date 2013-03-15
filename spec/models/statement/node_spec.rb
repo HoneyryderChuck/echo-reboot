@@ -10,4 +10,11 @@ describe Node do
     it { should have_many(:contra_arguments) }
     it { should have_many(:background_infos) }
   end
+
+  describe "validations" do
+    it { should validate_presence_of(:editorial_state_code) }
+    it { should validate_presence_of(:info_type_code) }
+    it { should ensure_inclusion_of(:editorial_state_code).in_array(StatementState.codes) }
+    it { should ensure_inclusion_of(:info_type_code).in_array(InfoType.codes) }
+  end
 end

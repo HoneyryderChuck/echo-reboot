@@ -14,7 +14,11 @@ class Enumeration
 
 
   def self.all
-    definition_file[enumeration_code].map{|code|self.new(code)}
+    codes.map{|code|self.new(code)}
+  end
+
+  def self.codes
+    definition_file[enumeration_code]
   end
 
   private

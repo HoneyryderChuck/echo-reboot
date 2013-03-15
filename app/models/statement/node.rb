@@ -7,6 +7,19 @@ class Node < ActiveRecord::Base
   has_many :contra_arguments, dependent: :destroy
   has_many :background_infos, dependent: :destroy
 
+
+  validates :info_type_code,       presence: true, inclusion: { in: InfoType.codes }
+  validates :editorial_state_code, presence: true, inclusion: { in: StatementState.codes }
+
+
+  def info_type
+    @info_type ||= InfoType.new(info_type_code)
+  end
+
+  def editorial_state
+    @editorial_state ||= StatementState.new(editorial_state_code)
+  end
+
   def destroy
     super unless %w(questions proposals improvements pro_arguments contra_arguments background_infos).any? { |a| self.send(a).count > 0 }
   end

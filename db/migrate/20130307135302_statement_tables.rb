@@ -42,7 +42,8 @@ class StatementTables < ActiveRecord::Migration
     end
 
     create_table :nodes do |t|
-
+      t.string :editorial_state_code, limit: 15
+      t.string :info_type_code,       limit: 15
     end
 
     # join tables for belongs to many relations

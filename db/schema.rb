@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   end
 
   create_table "nodes", :force => true do |t|
+    t.string "editorial_state_code", :limit => 15
+    t.string "info_type_code",       :limit => 15
   end
 
   create_table "pro_argument_alternatives", :force => true do |t|
