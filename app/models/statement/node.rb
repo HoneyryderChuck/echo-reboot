@@ -11,6 +11,7 @@ class Node < ActiveRecord::Base
   validates :info_type_code,       presence: true, inclusion: { in: InfoType.codes }
   validates :editorial_state_code, presence: true, inclusion: { in: StatementState.codes }
 
+  mount_uploader :statement_image, StatementImageUploader
 
   def info_type
     @info_type ||= InfoType.new(info_type_code)
