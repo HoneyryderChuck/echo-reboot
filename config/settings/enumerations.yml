@@ -1,0 +1,56 @@
+---
+about_category:
+- core_team
+- supporters
+- translators
+- interns
+- alumni
+- partners
+- technology_partners
+- financial_partners
+- strategic_partners
+- thematic_partners
+info_type:
+- article
+- paper
+- book
+- audio
+- photo
+- video
+- law
+- document
+language_level:
+- mother_tongue
+- advanced
+- intermediate
+- basic
+language:
+- en
+- de
+- fr
+- pt
+- es
+- hu
+organization_type:
+- ngo
+- political
+- scientific
+- trade_union
+- social_business
+- profit_driven_business
+statement_action:
+- new
+- edit
+- translate
+- incorporate
+statement_state:
+- new
+- published
+tag_context:
+- affection
+- engagement
+- expertise
+- decision_making
+- field_of_work
+- field_of_activity
+- topic
