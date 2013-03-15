@@ -8,3 +8,19 @@ autoload :OrganizationType, Rails.root.join('lib/enumerations/organization_type'
 autoload :StatementAction,  Rails.root.join('lib/enumerations/statement_action')
 autoload :StatementState,   Rails.root.join('lib/enumerations/statement_state')
 autoload :TagContext,       Rails.root.join('lib/enumerations/tag_context')
+
+
+module Enumerations
+  module HasEnumerated
+    def has_enumerated(attribute, opts={})
+      klass = opts[:class_name] || attribute.to_s.classify
+      validates :"#{attribute}_code", presence: true, inclusion: { in: klass.constantize.codes }
+
+      define_method attribute do
+        klass.new(send("#{attribute}_code"))
+      end
+    end
+  end
+end
+
+ActiveRecord::Base.extend(Enumerations::HasEnumerated)

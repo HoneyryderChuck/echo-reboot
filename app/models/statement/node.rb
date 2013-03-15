@@ -8,8 +8,8 @@ class Node < ActiveRecord::Base
   has_many :background_infos, dependent: :destroy
 
 
-  validates :info_type_code,       presence: true, inclusion: { in: InfoType.codes }
-  validates :editorial_state_code, presence: true, inclusion: { in: StatementState.codes }
+  has_enumerated :info_type
+  has_enumerated :editorial_state, class_name: "StatementState"
 
   mount_uploader :statement_image, StatementImageUploader
 
