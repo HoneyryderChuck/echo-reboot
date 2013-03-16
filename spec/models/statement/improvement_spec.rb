@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-require "./spec/spec_helper"
+require "spec_helper"
 
 describe Improvement do
   describe "associations" do

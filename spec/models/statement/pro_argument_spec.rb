@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-require "./spec/spec_helper"
+require "spec_helper"
 
 describe ProArgument do
   describe "associations" do
