@@ -121,6 +121,12 @@ ActiveRecord::Schema.define(:version => 20130316002524) do
     t.datetime "updated_at",            :null => false
   end
 
+  create_table "spoken_languages", :force => true do |t|
+    t.integer "user_id",                           :null => false
+    t.string  "language_code",       :limit => 2
+    t.string  "language_level_code", :limit => 20
+  end
+
   create_table "user_echos", :force => true do |t|
     t.integer  "echo_id",                       :null => false
     t.integer  "user_id",                       :null => false

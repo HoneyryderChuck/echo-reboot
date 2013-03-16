@@ -52,9 +52,9 @@ class StatementTables < ActiveRecord::Migration
       t.text          :text
       t.text          :language_code, limit: 2
       t.text          :action_code, limit: 20
-      t.integer       :node_id, null: false
-      t.integer       :author_id, null: false
-      t.integer       :previous_document_id
+      t.references    :node, null: false
+      t.references    :author, null: false
+      t.references    :previous_document
       t.references    :incorporated_statement, polymorphic: true
       t.integer       :locked_by
       t.datetime      :locked_at
@@ -101,5 +101,12 @@ class StatementTables < ActiveRecord::Migration
     create_table :users do |t|
       t.timestamps
     end
+
+    create_table :spoken_languages do |t|
+      t.references :user, null: false
+      t.string :language_code, limit: 2
+      t.string :language_level_code, limit: 20
+    end
+
   end
 end
