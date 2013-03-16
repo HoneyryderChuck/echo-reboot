@@ -118,5 +118,22 @@ class StatementTables < ActiveRecord::Migration
       t.string :language_level_code, limit: 20
     end
 
+
+    # tags
+    create_table :tao_tags do |t|
+      t.references :tag
+      t.references :tao, polymorphic: true
+      t.string     :tag_context_code
+    end
+
+    create_table :tags do |t|
+
+    end
+
+    create_table :tag_translations do |t|
+      t.references :tag
+      t.string :language_code, limit: 2
+      t.string :value
+    end
   end
 end

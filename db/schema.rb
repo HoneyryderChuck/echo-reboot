@@ -137,6 +137,22 @@ ActiveRecord::Schema.define(:version => 20130316002524) do
     t.string  "language_level_code", :limit => 20
   end
 
+  create_table "tag_translations", :force => true do |t|
+    t.integer "tag_id"
+    t.string  "language_code", :limit => 2
+    t.string  "value"
+  end
+
+  create_table "tags", :force => true do |t|
+  end
+
+  create_table "tao_tags", :force => true do |t|
+    t.integer "tag_id"
+    t.integer "tao_id"
+    t.string  "tao_type"
+    t.string  "tag_context_code"
+  end
+
   create_table "user_echos", :force => true do |t|
     t.integer  "echo_id",                       :null => false
     t.integer  "user_id",                       :null => false
