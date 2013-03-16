@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 gem 'mysql2'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'devise'
 
 
 group :development do
