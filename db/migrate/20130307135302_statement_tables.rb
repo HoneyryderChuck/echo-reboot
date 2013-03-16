@@ -102,6 +102,16 @@ class StatementTables < ActiveRecord::Migration
       t.timestamps
     end
 
+    create_table :profiles do |t|
+      t.references :user, null: false
+      t.string     :avatar
+      t.string     :full_name
+      t.string     :city, limit: 50
+      t.string     :country, limit: 50
+      t.string     :about_me, limit: 1024
+      t.string     :motivation, limit: 1024
+    end
+
     create_table :spoken_languages do |t|
       t.references :user, null: false
       t.string :language_code, limit: 2

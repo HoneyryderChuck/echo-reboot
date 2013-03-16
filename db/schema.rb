@@ -99,6 +99,16 @@ ActiveRecord::Schema.define(:version => 20130316002524) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "profiles", :force => true do |t|
+    t.integer "user_id",                    :null => false
+    t.string  "avatar"
+    t.string  "full_name"
+    t.string  "city",       :limit => 50
+    t.string  "country",    :limit => 50
+    t.string  "about_me",   :limit => 1024
+    t.string  "motivation", :limit => 1024
+  end
+
   create_table "proposal_alternatives", :force => true do |t|
     t.integer "proposal_id"
     t.integer "alternative_id"

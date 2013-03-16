@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'carrierwave/processing/mime_types'
 
-class StatementImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MimeTypes
 
@@ -27,7 +27,7 @@ class StatementImageUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
      # For Rails 3.1+ asset pipeline compatibility:
-     asset_path(['default',version_name, "statement_image.png"].compact.join('_'))
+     asset_path(['default',version_name, "avatar.png"].compact.join('_'))
   end
 
   # Process files as they are uploaded:
@@ -38,22 +38,17 @@ class StatementImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :big do
-     process :scale => [800, 600]
-  end
-
-  version :medium do
-     process :scale => [200, 133]
-  end
-
-  version :big do
+  version :small do
      process :scale => [45, 45]
+  end
+  version :big do
+     process :scale => [128, 128]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-     %w(jpeg png pjpeg x-png)
+    %w(jpeg png pjpeg x-png)
   end
 
   # Override the filename of the uploaded files:
