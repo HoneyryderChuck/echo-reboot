@@ -7,6 +7,8 @@ class Node < ActiveRecord::Base
   has_many :contra_arguments, dependent: :destroy
   has_many :background_infos, dependent: :destroy
 
+  has_many :documents, :dependent => :destroy
+
 
   has_enumerated :info_type
   has_enumerated :editorial_state, class_name: "StatementState"

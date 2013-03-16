@@ -35,6 +35,21 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "documents", :force => true do |t|
+    t.string   "title",                       :limit => 101
+    t.text     "text"
+    t.text     "language_code",               :limit => 255
+    t.text     "action_code",                 :limit => 255
+    t.integer  "node_id",                                    :null => false
+    t.integer  "author_id",                                  :null => false
+    t.integer  "previous_document_id"
+    t.integer  "incorporated_statement_id"
+    t.string   "incorporated_statement_type"
+    t.integer  "locked_by"
+    t.datetime "locked_at"
+    t.boolean  "current"
+  end
+
   create_table "echos", :force => true do |t|
     t.integer  "echoable_id",                    :null => false
     t.string   "echoable_type",                  :null => false
@@ -68,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20130307135302) do
   create_table "nodes", :force => true do |t|
     t.string "editorial_state_code", :limit => 15
     t.string "info_type_code",       :limit => 15
+    t.string "image"
   end
 
   create_table "pro_argument_alternatives", :force => true do |t|
