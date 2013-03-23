@@ -17,7 +17,11 @@ module Enumerations
       validates :"#{attribute}_code", presence: true, inclusion: { in: klass.constantize.codes }
 
       define_method attribute do
-        klass.new(send("#{attribute}_code"))
+        klass[send("#{attribute}_code")]
+      end
+
+      define_method :"#{attribute}=" do |value|
+        send("#{attribute}_code=", value.code)
       end
     end
   end
