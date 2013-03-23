@@ -38,12 +38,12 @@ class StatementTables < ActiveRecord::Migration
       t.references :statement, polymorphic: true, null: false
       t.references :creator
       t.references :node
+      t.string :info_type_code,       limit: 15
       t.timestamps
     end
 
     create_table :nodes do |t|
       t.string :editorial_state_code, limit: 15
-      t.string :info_type_code,       limit: 15
       t.string :image
     end
 

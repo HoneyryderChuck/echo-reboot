@@ -10,14 +10,10 @@ class Node < ActiveRecord::Base
   has_many :documents, :dependent => :destroy
 
 
-  has_enumerated :info_type
   has_enumerated :editorial_state, class_name: "StatementState"
 
   mount_uploader :statement_image, StatementImageUploader
 
-  def info_type
-    @info_type ||= InfoType.new(info_type_code)
-  end
 
   def editorial_state
     @editorial_state ||= StatementState.new(editorial_state_code)
