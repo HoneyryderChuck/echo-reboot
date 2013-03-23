@@ -44,4 +44,23 @@ describe Node do
     end
     after { subject.publish! }
   end
+
+  describe "document methods" do
+    let(:scope) { mock(:scope) }
+    describe "#current_documents" do
+      it "should scope by current" do
+        scope.should_receive(:where).with(current: true)
+        subject.should_receive(:documents).and_return(:scope)
+        subject.current_documents
+      end
+    end
+    describe "#current_document" do
+      let(:document) { mock(:document) }
+      it "should get the document in the current language from the current documents" do
+        scope.should_receive(:where).with(language: I18n.locale).and_return(document)
+        subject.should_receive(:current_documents).and_return(scope)
+        subject.current_document.should == document
+      end
+    end
+  end
 end

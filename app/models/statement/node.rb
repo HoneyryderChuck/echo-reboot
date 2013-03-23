@@ -20,17 +20,17 @@ class Node < ActiveRecord::Base
     @editorial_state ||= StatementState[editorial_state_code]
   end
 
-  def published?
-    self.editorial_state == StatementState[:published]
-  end
+  def published? ; self.editorial_state == StatementState[:published] ; end
+  def publish ; self.editorial_state = StatementState[:published] ; end
+  def publish! ; publish ; save ; end
 
-  def publish
-    self.editorial_state = StatementState[:published]
-  end
 
-  def publish!
-    publish
-    save
+  # documents
+  def current_documents
+    @current_documents ||= documents.where(current: true)
+  end
+  def current_document(locale=I18n.locale)
+    current_documents.where(language_code: locale).first
   end
 
   def destroy
