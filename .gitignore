@@ -17,3 +17,4 @@
 .idea/
 .rspec
 .rvmrc
+vendor/bundler_gems/
