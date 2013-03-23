@@ -21,6 +21,10 @@ class Enumeration
     definition_file[enumeration_code]
   end
 
+  def self.[](code)
+    all.detect{ |enumeration| enumeration.code.eql?(code.to_s) }
+  end
+
   private
 
   def self.enumeration_code

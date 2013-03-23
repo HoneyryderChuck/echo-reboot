@@ -17,7 +17,20 @@ class Node < ActiveRecord::Base
   acts_as_taggable :topics
 
   def editorial_state
-    @editorial_state ||= StatementState.new(editorial_state_code)
+    @editorial_state ||= StatementState[editorial_state_code]
+  end
+
+  def published?
+    self.editorial_state == StatementState[:published]
+  end
+
+  def publish
+    self.editorial_state = StatementState[:published]
+  end
+
+  def publish!
+    publish
+    save
   end
 
   def destroy
