@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
 
 
 
-
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :password, :password_confirmation, :remember_me
 
+
+  acts_as_taggable :affections, :engagements, :expertises, :decision_makings
 end

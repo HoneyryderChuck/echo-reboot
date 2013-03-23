@@ -14,6 +14,7 @@ class Node < ActiveRecord::Base
 
   mount_uploader :statement_image, StatementImageUploader
 
+  acts_as_taggable :topics
 
   def editorial_state
     @editorial_state ||= StatementState.new(editorial_state_code)
