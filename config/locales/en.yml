@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
+  errors:
+    messages:
+      invalid_context: Context invalid for the given entity
+
   enumerations:
     about_categories:
       core_team: Core Team
