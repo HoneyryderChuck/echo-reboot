@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   has_many :spoken_languages
-
+  has_one :profile
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :lockable
 
 
 
@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
 
   has_enumerated :last_login_language, class_name: "Language", allow_nil: true
+
+  before_create do |record|
+    record.build_profile
+  end
 
   # Languages
 

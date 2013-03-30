@@ -4,6 +4,18 @@ require "spec_helper"
 describe User do
   describe "associations" do
     it { should have_many(:spoken_languages) }
+    it { should have_one(:profile) }
+  end
+
+  describe "callbacks" do
+    describe "before" do
+      describe "create" do
+        it "should create a profile" do
+          subject.should_receive(:build_profile)
+          subject.send :create
+        end
+      end
+    end
   end
 
   describe "#mother_tongues" do

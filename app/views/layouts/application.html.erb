@@ -42,8 +42,9 @@
 
   <div id="container">
     <header>
-      <%= render partial: "layouts/sections/login" %>
+      <%= render partial: "layouts/components/login" %>
     </header>
+    <%= render :partial => 'layouts/components/messages' %>
 
     <div id="main">
       <%= yield %>

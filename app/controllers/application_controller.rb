@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     elsif user_signed_in?
       current_user.preferred_language
     else
-      http_accept_language.compatible_language_from(I18n.available_locales)
+      env.http_accept_language.compatible_language_from(I18n.available_locales)
     end
   end
 

@@ -1,0 +1,16 @@
+<div id="message_container">
+  <div id="info_box" class="ui-state-highlight" <%= "style=display:none" unless flash[:notice] %> >
+    <div class="ui-icon ui-icon-info info_error_icon"></div>
+    <div class="message"><%= flash[:notice] %></div>
+    <button type="button" class="close_button">
+      <%= I18n.t('application.general.close') %>
+    </button>
+  </div>
+  <div id="error_box" class="ui-state-error" <%= "style=display:none" unless flash[:error] %> >
+    <div class="ui-icon ui-icon-alert info_error_icon"></div>
+    <div class="message"><%= flash[:error] %></div>
+    <button class="close_button">
+      <%= I18n.t('application.general.close') %>
+    </button>
+  </div>
+</div>

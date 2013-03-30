@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <%= current_user.profile.full_name || link_to("Edit Profile", '#') %>
+  <%= form_tag destroy_user_session_path, method: :delete do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>

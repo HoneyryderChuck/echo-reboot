@@ -18,7 +18,7 @@ module Enumerations
       validates :"#{attribute}_code", inclusion: { in: klass.constantize.codes, allow_nil: opts[:allow_nil] }
 
       define_method attribute do
-        klass[send("#{attribute}_code")]
+        klass[send("#{attribute}_code")] unless send("#{attribute}_code").nil?
       end
 
       define_method :"#{attribute}=" do |value|
