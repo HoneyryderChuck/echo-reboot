@@ -12,7 +12,7 @@ class Node < ActiveRecord::Base
 
   has_enumerated :editorial_state, class_name: "StatementState"
 
-  mount_uploader :statement_image, StatementImageUploader
+  mount_uploader :image, StatementImageUploader
 
   acts_as_taggable :topics
 
@@ -20,7 +20,7 @@ class Node < ActiveRecord::Base
     @editorial_state ||= StatementState[editorial_state_code]
   end
 
-  def published? ; self.editorial_state == StatementState[:published] ; end
+  delegate :published?, to: :editorial_state
   def publish ; self.editorial_state = StatementState[:published] ; end
   def publish! ; publish ; save ; end
 
@@ -31,6 +31,9 @@ class Node < ActiveRecord::Base
   end
   def current_document(locale=I18n.locale)
     current_documents.where(language_code: locale).first
+  end
+  def original_document
+    documents.where(previous_document_id: nil).first
   end
 
   def destroy

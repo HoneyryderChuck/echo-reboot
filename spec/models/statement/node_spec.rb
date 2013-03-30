@@ -33,9 +33,9 @@ describe Node do
 
   describe "#publish" do
     it "should mark it as published" do
-      subject.should_receive(:editorial_state=).with(StatementState[:published])
+      subject.publish
+      subject.editorial_state.code == "published"
     end
-    after { subject.publish }
   end
   describe "#publish!" do
     it "should persist the publishing" do
@@ -50,16 +50,24 @@ describe Node do
     describe "#current_documents" do
       it "should scope by current" do
         scope.should_receive(:where).with(current: true)
-        subject.should_receive(:documents).and_return(:scope)
+        subject.should_receive(:documents).and_return(scope)
         subject.current_documents
       end
     end
     describe "#current_document" do
       let(:document) { mock(:document) }
       it "should get the document in the current language from the current documents" do
-        scope.should_receive(:where).with(language: I18n.locale).and_return(document)
+        scope.should_receive(:where).with(language_code: I18n.locale).and_return([document])
         subject.should_receive(:current_documents).and_return(scope)
         subject.current_document.should == document
+      end
+    end
+    describe "#original_document" do
+      let(:original) { mock(:original) }
+      it "should get the document which doesn't have any previous document" do
+        scope.should_receive(:where).with(previous_document_id: nil).and_return([original])
+        subject.should_receive(:documents).and_return(scope)
+        subject.original_document.should == original
       end
     end
   end
