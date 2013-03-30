@@ -39,6 +39,7 @@ class StatementTables < ActiveRecord::Migration
       t.references :creator
       t.references :node
       t.string :info_type_code,       limit: 15
+      t.string :external_url,         limit: 500
       t.timestamps
     end
 

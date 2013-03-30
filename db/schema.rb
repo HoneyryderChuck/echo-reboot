@@ -14,13 +14,14 @@
 ActiveRecord::Schema.define(:version => 20130316002524) do
 
   create_table "background_infos", :force => true do |t|
-    t.integer  "statement_id",                 :null => false
-    t.string   "statement_type",               :null => false
+    t.integer  "statement_id",                  :null => false
+    t.string   "statement_type",                :null => false
     t.integer  "creator_id"
     t.integer  "node_id"
     t.string   "info_type_code", :limit => 15
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.string   "external_url",   :limit => 500
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "contra_argument_alternatives", :force => true do |t|
