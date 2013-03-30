@@ -14,7 +14,8 @@ module Enumerations
   module HasEnumerated
     def has_enumerated(attribute, opts={})
       klass = opts[:class_name] || attribute.to_s.classify
-      validates :"#{attribute}_code", presence: true, inclusion: { in: klass.constantize.codes }
+      validates :"#{attribute}_code", presence: true unless opts[:allow_nil]
+      validates :"#{attribute}_code", inclusion: { in: klass.constantize.codes }
 
       define_method attribute do
         klass[send("#{attribute}_code")]

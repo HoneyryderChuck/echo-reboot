@@ -100,6 +100,7 @@ class StatementTables < ActiveRecord::Migration
 
     # users
     create_table :users do |t|
+      t.string :last_login_language_code, limit: 5
       t.timestamps
     end
 
