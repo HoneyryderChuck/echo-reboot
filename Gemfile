@@ -11,11 +11,13 @@ gem 'mini_magick'
 gem 'devise'
 gem 'sinatra', require: false
 gem 'yajl-ruby'
+gem 'http_accept_language',     "=2.0.0.pre"
 
 
 group :development do
   gem 'pry-rails'
   gem 'awesome_print'
+  gem 'thin'
 end
 
 group :test do
