@@ -16,5 +16,31 @@ class Document < ActiveRecord::Base
   validates :current, uniqueness: {scope: [:language_code] }
 
 
-  default_scope where(current: true)
+  # Returns if the document is an original or a translation
+  def original?
+    !previous_document_id?
+  end
+
+
+  # Document locking mechanisms
+  def valid_lock_period
+    1.hours
+  end
+  private :valid_lock_period
+
+  def locked?(user)
+    locked_by.present? and !locked_by.eql?(user) and locked_at >= 1.hours.ago
+  end
+
+  def lock!(user)
+    self.locked_by = user
+    self.locked_at = Time.now
+    save
+  end
+
+  def unlock!
+    self.locked_by = nil
+    self.locked_at = nil
+    save
+  end
 end
