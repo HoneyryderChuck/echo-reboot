@@ -32,7 +32,7 @@ class Enumeration
   end
 
   def self.definition_file
-      @definition_file ||= YAML.load(File.new(Rails.root.join("config", "settings", "enumerations.yml")))
+      @definition_file ||= YAML.load(File.new(Rails.root.join("config", "settings", "enumerations.yml"))).freeze
   end
 
 end
