@@ -1,0 +1,58 @@
+<%= semantic_form_for @statement do |f| %>
+    <!--TITLE-->
+    <header>
+      <%= f.inputs do %>
+          <%= f.semantic_fields_for :node do |node_f| %>
+            <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+              <%= doc_f.input :title %>
+            <% end %>
+          <% end %>
+      <% end  %>
+
+      <span><%= supporters_number(@statement) %></span>
+    </header>
+
+    <section class="content">
+      <!--LANGUAGE-->
+      <%= f.inputs do %>
+        <%= f.semantic_fields_for :node do |node_f| %>
+          <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+            <%= doc_f.input :language_code,
+                             as: :select,
+                             collection: languages_by_proficiency(current_user, :intermediate).map{|l| [l.i18n_value, l.code] },
+                             selected: I18n.locale,
+                             include_blank: false %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <!-- DOCUMENT -->
+      <%= f.inputs do %>
+        <%= f.semantic_fields_for :node do |node_f| %>
+          <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+            <%= doc_f.input :text %>
+          <% end %>
+        <% end %>
+
+
+        <!-- STATEMENT TAGS -->
+        <%= f.semantic_fields_for :node do |node_f| %>
+          <%= node_f.input :topics %>
+        <% end %>
+
+        <!-- PUBLISH -->
+        <% unless @statement.node.published? %>
+          <%= f.semantic_fields_for :node do |node_f| %>
+            <%= node_f.input :editorial_state_code, as: :radio, collection: StatementState.all.map{|s| [s.i18n_value, s.code] }  %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <%= f.actions do %>
+        <%= f.button I18n.t('application.general.save'), type: :commit %>
+        <%= link_to I18n.t('application.general.cancel'), :back %>
+      <% end %>
+    </section>
+
+
+<% end %>

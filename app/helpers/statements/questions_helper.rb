@@ -1,0 +1,2 @@
+module Statements::QuestionsHelper
+end

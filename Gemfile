@@ -12,7 +12,12 @@ gem 'devise'
 gem 'sinatra', require: false
 gem 'yajl-ruby'
 gem 'http_accept_language',     "=2.0.0.pre"
+gem 'formtastic'
 
+
+group :development, :test do
+  gem "rspec-rails"
+end
 
 group :development do
   gem 'pry-rails'
@@ -21,7 +26,6 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails"
   gem "factory_girl_rails"
   gem "faker"
   gem "shoulda"

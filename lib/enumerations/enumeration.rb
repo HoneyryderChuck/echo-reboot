@@ -8,9 +8,9 @@ class Enumeration
   end
 
 
-  #def value
-  #  I18n.t("enumerations.#{self.class.plural_code}.#{code}")
-  #end
+  def i18n_value
+    I18n.t("enumerations.#{self.class.enumeration_code}.#{code}")
+  end
 
 
   def self.all
