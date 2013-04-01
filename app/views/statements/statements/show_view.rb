@@ -27,7 +27,7 @@ module Statements
         document.title
       end
 
-      def title
+      def text
         document.text
       end
 
