@@ -37,10 +37,10 @@ es:
       trade_union: Sindicato
       profit_driven_business: Firma de lucro
     statement_action:
-      new: Nuevo
-      edit: Editar
-      translate: Traducir
-      incorporate: Incorporar
+      created: Nuevo
+      updated: Editar
+      translated: Traducir
+      incorporated: Incorporar
     statement_state:
       new: Nuevo
       published: Publicado
@@ -650,15 +650,6 @@ es:
       published: Este debate ha sido publicada con éxito.
       edit: 'Editar %{type}'
 
-      types:
-        question:  'Cuestión'
-        proposal:  'Propuesta'
-        improvement: 'Mejora'
-        pro_argument: 'Argumento a favor'
-        contra_argument: 'Argumento en contra'
-        alternative: 'Oposiciones'
-        background_info: 'Antecedentes'
-        follow_up_question: 'Pregunta de seguimiento'
       new:
         question:  'Nuevo Debate'
         proposal:  'Nueva Propuesta'
@@ -920,12 +911,12 @@ es:
           taken: 'Esta entrada está siendo utilizada.'
 
       messages:
-        blank: "Tienes que rellenar el espacio '%{attribute}' ."
+        blank: "Tienes que rellenar."
         taken: 'Lo sentimos, pero la entrada deseada ya está siendo utilizada.'
-        too_short: "Tu entrada en el espacio '%{attribute}' es muy corta."
-        too_long: "Tu entrada en el espacio '%{attribute}' es muy larga."
-        invalid: "Tu entrada en el espacio '%{attribute}' tiene un formato inválido."
-        confirmation: '%{attribute} tienen que coincidir.'
+        too_short: "Tu entrada es muy corta."
+        too_long: "Tu entrada es muy larga."
+        invalid: "Tu entrada tiene un formato inválido."
+        confirmation: 'tienen que coincidir.'
         access_denied: "Lo sentimos, pero no tiene el permiso de acceso necesario."
 
       template:
@@ -973,11 +964,13 @@ es:
         index: 'Indice'
 
     models:
-      question: "Cuestión"
-      proposal: "Propuesta"
-      improvement: "Mejora"
+      question:  'Cuestión'
+      proposal:  'Propuesta'
+      improvement: 'Mejora'
       pro_argument: 'Argumento a favor'
       contra_argument: 'Argumento en contra'
+      alternative: 'Oposiciones'
+      background_info: 'Antecedentes'
       follow_up_question: 'Pregunta de seguimiento'
 
   authlogic:

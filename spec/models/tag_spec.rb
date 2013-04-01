@@ -9,8 +9,8 @@ describe Tag do
   end
 
   describe "#locale" do
-    let(:tag) { FactoryGirl.create(:tag, tag_translations: [FactoryGirl.build(:tag_translation, language: Language[:de], value: "Lili Marlene"),
-                                                            FactoryGirl.build(:tag_translation, language: Language[:en], value: "Lulu Marli")]) }
+    let(:tag) { create(:tag, tag_translations: [build(:tag_translation, language: Language[:de], value: "Lili Marlene"),
+                                                            build(:tag_translation, language: Language[:en], value: "Lulu Marli")]) }
     before do
       @old_default_locale = I18n.default_locale
       I18n.default_locale = :en

@@ -1,9 +1,9 @@
-<%= semantic_form_for @statement do |f| %>
+<%= semantic_form_for @statement, as: :statement do |f| %>
     <!--TITLE-->
     <header>
       <%= f.inputs do %>
           <%= f.semantic_fields_for :node do |node_f| %>
-            <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+            <%= node_f.semantic_fields_for :document, @document do |doc_f| %>
               <%= doc_f.input :title %>
             <% end %>
           <% end %>
@@ -16,7 +16,7 @@
       <!--LANGUAGE-->
       <%= f.inputs do %>
         <%= f.semantic_fields_for :node do |node_f| %>
-          <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+          <%= node_f.semantic_fields_for :document, @document do |doc_f| %>
             <%= doc_f.input :language_code,
                              as: :select,
                              collection: languages_by_proficiency(current_user, :intermediate).map{|l| [l.i18n_value, l.code] },
@@ -29,7 +29,7 @@
       <!-- DOCUMENT -->
       <%= f.inputs do %>
         <%= f.semantic_fields_for :node do |node_f| %>
-          <%= node_f.semantic_fields_for :documents, @document do |doc_f| %>
+          <%= node_f.semantic_fields_for :document, @document do |doc_f| %>
             <%= doc_f.input :text %>
           <% end %>
         <% end %>

@@ -16,17 +16,64 @@ describe Document do
     it { should validate_presence_of(:text) }
     it { should validate_presence_of(:node) }
     it {
-      FactoryGirl.create(:document)
-      should validate_uniqueness_of(:current).scoped_to(:language_code)
+      create(:document)
+      should validate_uniqueness_of(:current).scoped_to(:node_id, :language_code)
     }
   end
+
+  describe "callbacks" do
+    describe "before" do
+      describe "validation" do
+        it "should call #set_action and #set_previous_document" do
+          subject.should_receive(:set_action)
+          subject.should_receive(:set_previous_document)
+          subject.valid?
+        end
+      end
+    end
+  end
+
+  describe "#set_previous_document" do
+    let(:current) { build_stubbed(:document) }
+    let(:node) { mock(:node, current_document: current) }
+    it "should assign the node current document" do
+      subject.stub! node: node
+      subject.send(:set_previous_document)
+      subject.previous_document.should == current
+end
+  end
+  describe "#set_action" do
+    describe "when there's not a previous document" do
+      before { subject.stub! previous_document: nil }
+      it "should be set to created" do
+        subject.send(:set_action)
+        subject.action.code.should == "created"
+      end
+    end
+    describe "when there's a previous document" do
+      before { subject.stub! previous_document: mock(:document) }
+      it "should be set to updated" do
+        subject.send(:set_action)
+        subject.action.code.should == "updated"
+      end
+    end
+    it "should not do anything if the action is already set" do
+      action = mock(:action)
+      subject.stub! action: action
+      subject.send(:set_action)
+      subject.action.should == action
+
+    end
+
+  end
+
 
   describe "scopes" do
     describe ".by_preferred_language" do
       before(:all) do
-        @doc1 = FactoryGirl.create(:document, language_code: "es")
-        @doc2 = FactoryGirl.create(:document, language_code: "en")
-        @doc3 = FactoryGirl.create(:document, language_code: "de")
+        @doc1 = create(:document, language_code: "es")
+        @doc2 = create(:document, language_code: "en")
+        @doc3 = create(:document, language_code: "de")
       end
       after(:all) do
         DatabaseCleaner.clean

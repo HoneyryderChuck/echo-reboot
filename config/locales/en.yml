@@ -6,6 +6,7 @@ en:
   errors:
     messages:
       invalid_context: Context invalid for the given entity
+      collection_empty: '%{attribute} can not be empty'
 
   enumerations:
     about_category:
@@ -48,10 +49,10 @@ en:
       social_business: Social Business
       profit_driven_business: Profit-Driven Business
     statement_action:
-      new: New
-      edit: Edit
-      translate: Translate
-      incorporate: Incorporate
+      created: New
+      updated: Edit
+      translated: Translate
+      incorporated: Incorporate
     statement_state:
       new: New
       published: Published
@@ -649,16 +650,6 @@ en:
       published: The question has been released successfully.
       edit: 'Edit %{type}'
 
-      types:
-        question:  'Question'
-        proposal:  'Proposal'
-        improvement: 'Addition'
-        pro_argument: 'Pro Argument'
-        contra_argument: 'Contra Argument'
-        alternative: 'Opposition'
-        background_info: 'Background Info'
-        discuss_alternatives_question: 'Alternatives Discussion'
-        follow_up_question: 'Follow-Up Question'
       new:
         question: 'New Question'
         proposal: 'New Proposal'
@@ -903,6 +894,7 @@ en:
       thank_you: Your message has been sent successfully.
 
   activerecord:
+
     errors:
       models:
         feedback:
@@ -928,12 +920,8 @@ en:
 
 
       messages:
-        blank: "The field '%{attribute}' must not be empty."
+        blank: "can't be empty."
         taken: 'Is already in use.'
-        too_short: "Your input for '%{attribute}' is too short."
-        too_long: "Your input for '%{attribute}' is too long."
-        invalid: "Your input for '%{attribute}' must be in a valid format."
-        confirmation: '%{attribute} confirmation does not match.'
         access_denied: "You are not allowed to perform this action."
 
       template:
@@ -981,13 +969,15 @@ en:
         index: 'Index'
 
     models:
-      question: "question"
-      proposal: "proposal"
-      improvement: "addition"
-      pro_argument: 'pro argument'
-      contra_argument: 'contra argument'
-      follow_up_question: 'follow-up question'
-
+      question:  'Question'
+      proposal:  'Proposal'
+      improvement: 'Addition'
+      pro_argument: 'Pro Argument'
+      contra_argument: 'Contra Argument'
+      alternative: 'Opposition'
+      background_info: 'Background Info'
+      discuss_alternatives_question: 'Alternatives Discussion'
+      follow_up_question: 'Follow-Up Question'
 
   authlogic:
     error_messages:

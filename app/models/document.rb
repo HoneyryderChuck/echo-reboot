@@ -2,7 +2,7 @@
 class Document < ActiveRecord::Base
   belongs_to :node
   belongs_to :author, class_name: "User"
-  belongs_to :previous_document, class_name: 'StatementDocument'
+  belongs_to :previous_document, class_name: 'Document'
   belongs_to :incorporated_statement, polymorphic: true
   belongs_to :locked_by, class_name: "User", foreign_key: 'locked_by'
 
@@ -13,10 +13,12 @@ class Document < ActiveRecord::Base
 
   validates :title, presence: true, length: { maximum: 101 }
   validates :text, :node, :author, presence: true
-  validates :current, uniqueness: {scope: [:language_code] }
+  validates :current, uniqueness: {scope: [:node_id, :language_code] }
 
 
   scope :by_preferred_language, proc { |languages_list| where(language_code: languages_list).order("FIND_IN_SET(language_code, '#{languages_list.join(",")}')") }
+
+  before_validation :set_previous_document, :set_action
 
   # Returns if the document is an original or a translation
   def original?
@@ -44,5 +46,15 @@ class Document < ActiveRecord::Base
     self.locked_by = nil
     self.locked_at = nil
     save
+  end
+
+
+  private
+  def set_previous_document
+    self.previous_document ||= self.node.current_document if self.node.present?
+  end
+
+  def set_action
+    self.action ||= self.previous_document.nil? ? StatementAction[:created] : StatementAction[:updated]
   end
 end

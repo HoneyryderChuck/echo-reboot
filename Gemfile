@@ -5,6 +5,7 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'strong_parameters' # TODO: remove on Rails 4 (default)
 gem 'mysql2'
 gem 'carrierwave'
 gem 'mini_magick'

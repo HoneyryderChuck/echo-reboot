@@ -10,17 +10,17 @@ describe SpokenLanguage do
     it { should validate_presence_of(:language_level_code) }
     it { should validate_presence_of(:language_code) }
     it {
-      FactoryGirl.create(:spoken_language)
+      create(:spoken_language)
       should validate_uniqueness_of(:language_code).scoped_to(:user_id)
     }
   end
 
   describe "scopes" do
     before(:all) do
-      @language1 = FactoryGirl.create(:spoken_language, language_level_code: "mother_tongue")
-      @language2 = FactoryGirl.create(:spoken_language, language_level_code: "advanced")
-      @language3 = FactoryGirl.create(:spoken_language, language_level_code: "intermediate")
-      @language4 = FactoryGirl.create(:spoken_language, language_level_code: "basic")
+      @language1 = create(:spoken_language, language_level_code: "mother_tongue")
+      @language2 = create(:spoken_language, language_level_code: "advanced")
+      @language3 = create(:spoken_language, language_level_code: "intermediate")
+      @language4 = create(:spoken_language, language_level_code: "basic")
     end
     after(:all) do
       DatabaseCleaner.clean

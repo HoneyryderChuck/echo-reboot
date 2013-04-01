@@ -8,5 +8,11 @@ class Statement < ActiveRecord::Base
   validates :node, :creator, :echo, presence: true
   validates :node, associated: true
 
+
+  # form handlers
+  def node=(attrs)
+    attrs.is_a?(Hash) ? (node || Node.new).assign_attributes(attrs) : super
+  end
+
 end
 

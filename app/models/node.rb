@@ -7,7 +7,7 @@ class Node < ActiveRecord::Base
   has_many :contra_arguments, dependent: :destroy
   has_many :background_infos, dependent: :destroy
 
-  has_many :documents, :dependent => :destroy
+  has_many :documents, inverse_of: :node, :dependent => :destroy
 
 
   has_enumerated :editorial_state, class_name: "StatementState"
@@ -15,6 +15,8 @@ class Node < ActiveRecord::Base
   mount_uploader :image, StatementImageUploader
 
   acts_as_taggable :topics
+
+  validates :documents, collection_emptiness: true
 
   def editorial_state
     @editorial_state ||= StatementState[editorial_state_code]
@@ -37,6 +39,11 @@ class Node < ActiveRecord::Base
   end
   def original_language
     original_document.language
+  end
+
+  # form_handlers
+  def document=(ar_attrs)
+    ar_attrs.is_a?(Hash) ? documents.build(ar_attrs) : super
   end
 
   def destroy

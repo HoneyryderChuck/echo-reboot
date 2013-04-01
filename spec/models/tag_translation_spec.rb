@@ -15,10 +15,10 @@ describe TagTranslation do
 
   describe "scopes" do
     before(:all) do
-      @tag1 = FactoryGirl.create(:tag_translation, language_code: I18n.default_locale.to_s, value: "Bangus")
-      @tag2 = FactoryGirl.create(:tag_translation, language_code: I18n.default_locale.to_s, value: "Bang")
-      @tag3 = FactoryGirl.create(:tag_translation, language_code: I18n.default_locale.to_s, value: "angus")
-      @tag4 = FactoryGirl.create(:tag_translation, language_code: I18n.default_locale.to_s, value: "ungus")
+      @tag1 = create(:tag_translation, language_code: I18n.default_locale.to_s, value: "Bangus")
+      @tag2 = create(:tag_translation, language_code: I18n.default_locale.to_s, value: "Bang")
+      @tag3 = create(:tag_translation, language_code: I18n.default_locale.to_s, value: "angus")
+      @tag4 = create(:tag_translation, language_code: I18n.default_locale.to_s, value: "ungus")
     end
     after(:all) do
       DatabaseCleaner.clean

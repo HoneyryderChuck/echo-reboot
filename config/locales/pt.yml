@@ -37,10 +37,10 @@ pt:
       trade_union: Sindicato
       profit_driven_business: Firma com fins lucrativos
     statement_action:
-      new: Novo
-      edit: Editar
-      translate: Traduzir
-      incorporate: Incorporar
+      created: Novo
+      updated: Editar
+      translated: Traduzir
+      incorporated: Incorporar
     statement_state:
       new: Novo
       published: Publicado
@@ -617,15 +617,6 @@ pt:
       published: A questão foi publicada com sucesso.
       edit: 'Editar %{type}'
 
-      types:
-        question:  'Questão'
-        proposal:  'Proposta'
-        improvement: 'Melhoria'
-        pro_argument: 'Argumento a Favor'
-        contra_argument: 'Argumento Contra'
-        alternative: 'Oposição'
-        background_info: 'Informação de Fundo'
-        follow_up_question: 'Questão Complementar'
       new:
         question:  'Nova Questão'
         proposal:  'Nova Proposta'
@@ -878,12 +869,12 @@ pt:
           taken: Esta conta social já se encontra em utilização.
 
       messages:
-        blank: "O campo '%{attribute}' tem que ser preenchido obrigatoriamente."
+        blank: "tem que ser preenchido obrigatoriamente."
         taken: 'Já se encontra em uso.'
-        too_short: "A sua entrada para '%{attribute}' é demasiado curta."
-        too_long: "A sua entrada para '%{attribute}' é demasiado longa."
-        invalid: "A sua entrada para '%{attribute}' tem que ser inserida num formato válido."
-        confirmation: 'Confirmação de %{attribute} não corresponde.'
+        too_short: "A sua entrada é demasiado curta."
+        too_long: "A sua entrada é demasiado longa."
+        invalid: "A sua entrada tem que ser inserida num formato válido."
+        confirmation: 'Confirmação não corresponde.'
         access_denied: "Não lhe é permitido efetuar esta ação."
 
       template:
@@ -931,12 +922,14 @@ pt:
         index: Índice
 
     models:
-      question: "questão"
-      proposal: "proposta"
-      improvement: "melhoria"
-      pro_argument: 'argumento a favor'
-      contra_argument: 'argumento contra'
-      follow_up_question: 'questão complementar'
+      question:  'Questão'
+      proposal:  'Proposta'
+      improvement: 'Melhoria'
+      pro_argument: 'Argumento a Favor'
+      contra_argument: 'Argumento Contra'
+      alternative: 'Oposição'
+      background_info: 'Informação de Fundo'
+      follow_up_question: 'Questão Complementar'
 
 
   authlogic:

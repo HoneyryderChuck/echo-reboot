@@ -12,7 +12,7 @@ describe TaoTag do
     it { should validate_presence_of(:tag) }
     it { should validate_presence_of(:tao) }
     #it {
-    #  TaoTag.create(tag: Tag.new, tao: FactoryGirl.build(:user))
+    #  TaoTag.create(tag: Tag.new, tao: build(:user))
     #  should validate_uniqueness_of(:tag_id).scoped_to([:tao_type, :tao_id, :tag_context_code])
     #}
   end

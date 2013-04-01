@@ -38,10 +38,10 @@ hu:
       trade_union: Szakszervezet
       profit_driven_business: Profitorientált Cég
     statement_action:
-      new: Új
-      edit: Szerkesztem
-      translate: Lefordítom
-      incorporate: Összefésülöm
+      created: Új
+      updated: Szerkesztem
+      translated: Lefordítom
+      incorporated: Összefésülöm
     statement_state:
       new: Új
       published: Publikált
@@ -648,15 +648,6 @@ hu:
       published: A kérdésfelvetést sikeresen publikáltad.
       edit: '%{type} szereksztése'
 
-      types:
-        question: 'Kérdésfelvetés'
-        proposal: 'Javaslat'
-        improvement: 'Kiegészítés'
-        pro_argument: 'Érv mellette'
-        contra_argument: 'Érv ellene'
-        alternative: 'Ellenvélemény'
-        background_info: 'Háttérinfó'
-        follow_up_question: 'Felmerülő kérdés'
       new:
         question: 'Új Kérdésfelvetés'
         proposal: 'Új Javaslat'
@@ -914,12 +905,12 @@ hu:
 
 
       messages:
-        blank: "A(z) '%{attribute}' mező nem maradhat üresen."
+        blank: "mező nem maradhat üresen."
         taken: 'Már használatban van.'
-        too_short: "Az itt megadott érték túl rövid: '%{attribute}'."
-        too_long: "Az itt megadott érték túl hosszú: '%{attribute}'."
-        invalid: "A(z) '%{attribute}' mező nem szabályos formátumú."
-        confirmation: '%{attribute} megerősítése nem egyezik.'
+        too_short: "Az itt megadott érték túl rövid."
+        too_long: "Az itt megadott érték túl hosszú."
+        invalid: "mező nem szabályos formátumú."
+        confirmation: 'megerősítése nem egyezik.'
         access_denied: "Ezt az akciót sajnos nem hajthatod végre."
 
       template:
@@ -968,13 +959,14 @@ hu:
         index: 'Index'
 
     models:
-      question: "kérdésfelvetés"
-      proposal: "javaslat"
-      improvement: "kiegészítés"
-      pro_argument: 'támogató érv'
-      contra_argument: 'ellenérv'
-      follow_up_question: 'felvetődő kérdés'
-
+      question: 'Kérdésfelvetés'
+      proposal: 'Javaslat'
+      improvement: 'Kiegészítés'
+      pro_argument: 'Érv mellette'
+      contra_argument: 'Érv ellene'
+      alternative: 'Ellenvélemény'
+      background_info: 'Háttérinfó'
+      follow_up_question: 'Felmerülő kérdés'
 
   authlogic:
     error_messages:

@@ -37,10 +37,10 @@ fr:
       trade_union: Syndicat
       profit_driven_business: Firma à but lucratif
     statement_action:
-      new: Neuf
-      edit: Éditer
-      translate: Traduire
-      incorporate: Incorporer
+      created: Neuf
+      updated: Éditer
+      translated: Traduire
+      incorporated: Incorporer
     statement_state:
       new: Neuf
       published: Publié
@@ -668,15 +668,6 @@ fr:
       published: La discussion a été publiée avec succès.
       edit: '%{type} poursuivre'
 
-      types:
-        question: 'Question'
-        proposal: 'Proposition'
-        improvement: 'Rajout'
-        pro_argument: 'Argument PRO'
-        contra_argument: 'Argument CONTRE'
-        alternative: 'Opposition'
-        background_info: 'Background Info'
-        follow_up_question: 'Question suivie'
       new:
         question:  'Nouvelle question'
         proposal:  'Nouvelle proposition'
@@ -946,12 +937,12 @@ fr:
           taken: 'Ce compte est déjà utilisé.'
 
       messages:
-        blank: "La case '%{attribute}' doit être remplie."
+        blank: "doit être remplie."
         taken: 'Votre définition préférée est déjà utilisée.'
-        too_short: "Le texte dans la case '%{attribute}' est trop court."
-        too_long: "Le texte dans la case '%{attribute}' est trop long."
-        invalid: "Vos indications '%{attribute}' n'ont pas le bon format."
-        confirmation: '%{attribute} doivent être identique'
+        too_short: "Le texte est trop court."
+        too_long: "Le texte est trop long."
+        invalid: "n'ont pas le bon format."
+        confirmation: 'doivent être identique'
         access_denied: "Vous ne pouvez pas aller plus loin. Essayez plus tard"
 
       template:
@@ -1000,12 +991,14 @@ fr:
         index: 'Index'
 
     models:
-      question: "question"
-      proposal: "proposition"
-      improvement: "rajout"
-      pro_argument: 'argument PRO'
-      contra_argument: 'argument CONTRE'
-      follow_up_question: 'question suivie'
+      question: 'Question'
+      proposal: 'Proposition'
+      improvement: 'Rajout'
+      pro_argument: 'Argument PRO'
+      contra_argument: 'Argument CONTRE'
+      alternative: 'Opposition'
+      background_info: 'Background Info'
+      follow_up_question: 'Question suivie'
 
   authlogic:
     error_messages:

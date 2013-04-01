@@ -37,10 +37,10 @@ de:
       trade_union: Gewerkschaft
       profit_driven_business: Gewinnorientierte Firma
     statement_action:
-      new: Neu
-      edit: Editieren
-      translate: Übersetzen
-      incorporate: Einfügen
+      created: Neu
+      updated: Editieren
+      translated: Übersetzen
+      incorporated: Einfügen
     statement_state:
       new: Neu
       published: Veröffentlicht
@@ -652,15 +652,6 @@ de:
       published: Die Fragestellung wurde erfolgreich freigegeben.
       edit: '%{type} bearbeiten'
 
-      types:
-        question:  'Fragestellung'
-        proposal:  'Vorschlag'
-        improvement: 'Ergänzung'
-        pro_argument: 'Pro-Argument'
-        contra_argument: 'Kontra-Argument'
-        alternative: 'Gegenmeinung'
-        background_info: 'Hintergrundinfo'
-        follow_up_question: 'Folgefrage'
       new:
         question:  'Neue Fragestellung'
         proposal:  'Neuer Vorschlag'
@@ -921,12 +912,12 @@ de:
           taken: 'Dieses Konto wird bereits verwendet. Bitte melden Sie sich damit an.'
 
       messages:
-        blank: "Das Feld '%{attribute}' muss ausgefüllt werden."
+        blank: "muss ausgefüllt werden."
         taken: 'Ihre Wunschangabe wird leider bereits schon verwendet.'
-        too_short: "Ihre Eingabe im Feld '%{attribute}' ist zu kurz."
-        too_long: "Ihre Eingabe im Feld '%{attribute}' ist zu lang."
-        invalid: "Ihre Eingabe im Feld '%{attribute}' hat ein falsches Format."
-        confirmation: '%{attribute} muss übereinstimmen.'
+        too_short: "Ihre Eingabe ist zu kurz."
+        too_long: "Ihre Eingabe ist zu lang."
+        invalid: "Ihre Eingabe ist ungültig."
+        confirmation: 'muss übereinstimmen.'
         access_denied: "Leider fehlt Ihnen die notwendige Zugangsberechtigung."
 
       template:
@@ -976,11 +967,13 @@ de:
         index: 'Index'
 
     models:
-      question: "Fragestellung"
-      proposal: "Vorschlag"
-      improvement: "Ergänzung"
+      question:  'Fragestellung'
+      proposal:  'Vorschlag'
+      improvement: 'Ergänzung'
       pro_argument: 'Pro-Argument'
       contra_argument: 'Kontra-Argument'
+      alternative: 'Gegenmeinung'
+      background_info: 'Hintergrundinfo'
       follow_up_question: 'Folgefrage'
 
   authlogic:

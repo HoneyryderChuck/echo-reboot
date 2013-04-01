@@ -39,10 +39,10 @@ organization_type:
 - social_business
 - profit_driven_business
 statement_action:
-- new
-- edit
-- translate
-- incorporate
+- created
+- updated
+- translated
+- incorporated
 statement_state:
 - new
 - published
