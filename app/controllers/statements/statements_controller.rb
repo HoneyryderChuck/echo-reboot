@@ -4,6 +4,11 @@ class Statements::StatementsController < ApplicationController
 
   end
 
+  def show
+    @statement = fetch_statement
+    render
+  end
+
   def new
     @statement = new_statement
     @document = @statement.node.documents.build

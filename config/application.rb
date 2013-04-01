@@ -12,8 +12,6 @@ end
 module EchoReboot
   class Application < Rails::Application
 
-    config.autoload_paths += Dir[config.root.join("app", "models", "statement")]
-
     config.generators do |g|
       g.text_framework :rspec, :views => false, :fixture => false
       g.fixture_replacement :factory_girl

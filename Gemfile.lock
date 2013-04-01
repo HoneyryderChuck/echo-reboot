@@ -87,8 +87,12 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.6.1)
+    mustache (0.99.4)
     mysql2 (0.3.11)
     orm_adapter (0.4.0)
+    poirot (0.2.4)
+      mustache
+      rails (> 3)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -190,6 +194,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   mysql2
+  poirot
   pry-rails
   rails (= 3.2.12)
   rspec-rails

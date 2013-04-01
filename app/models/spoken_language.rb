@@ -13,4 +13,6 @@ class SpokenLanguage < ActiveRecord::Base
     valuable_codes = LanguageLevel.codes.slice(0, LanguageLevel.codes.index(code)+1)
     scope :"at_least_#{code}", proc { where(language_level_code: valuable_codes) }
   end
+
+  scope :by_language_level, proc { order("FIND_IN_SET(language_level_code, '#{LanguageLevel.codes.join(",")}')")}
 end

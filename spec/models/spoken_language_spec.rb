@@ -51,5 +51,11 @@ describe SpokenLanguage do
         SpokenLanguage.at_least_basic.should == [@language1, @language2, @language3, @language4]
       end
     end
+
+    describe ".by_preferred_language" do
+      it "should order by the given language level order" do
+        SpokenLanguage.by_language_level.should == [@language1, @language2, @language3, @language4]
+      end
+    end
   end
 end

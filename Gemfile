@@ -9,10 +9,11 @@ gem 'mysql2'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
-gem 'sinatra', require: false
+gem 'sinatra',                        require: false
 gem 'yajl-ruby'
-gem 'http_accept_language',     "=2.0.0.pre"
+gem 'http_accept_language',           "=2.0.0.pre"
 gem 'formtastic'
+gem 'poirot'
 
 
 group :development, :test do

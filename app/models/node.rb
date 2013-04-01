@@ -35,6 +35,9 @@ class Node < ActiveRecord::Base
   def original_document
     documents.where(previous_document_id: nil).first
   end
+  def original_language
+    original_document.language
+  end
 
   def destroy
     super unless %w(questions proposals improvements pro_arguments contra_arguments background_infos).any? { |a| self.send(a).count > 0 }

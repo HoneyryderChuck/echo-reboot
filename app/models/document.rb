@@ -16,6 +16,8 @@ class Document < ActiveRecord::Base
   validates :current, uniqueness: {scope: [:language_code] }
 
 
+  scope :by_preferred_language, proc { |languages_list| where(language_code: languages_list).order("FIND_IN_SET(language_code, '#{languages_list.join(",")}')") }
+
   # Returns if the document is an original or a translation
   def original?
     !previous_document_id?
