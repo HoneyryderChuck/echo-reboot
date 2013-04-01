@@ -21,6 +21,25 @@ describe Document do
     }
   end
 
+  describe "scopes" do
+    describe ".by_preferred_language" do
+      before(:all) do
+        @doc1 = FactoryGirl.create(:document, language_code: "es")
+        @doc2 = FactoryGirl.create(:document, language_code: "en")
+        @doc3 = FactoryGirl.create(:document, language_code: "de")
+      end
+      after(:all) do
+        DatabaseCleaner.clean
+      end
+      it "should order by the given language order" do
+        Document.by_preferred_language([:en, :de, :es]).should == [@doc2, @doc3, @doc1]
+        Document.by_preferred_language([:de, :en, :es]).should == [@doc3, @doc2, @doc1]
+        Document.by_preferred_language([:de, :en]).should == [@doc3, @doc2]
+      end
+    end
+  end
+
+
   describe "#original?" do
     it "should be dependent of whether the document has a previous document" do
       subject.stub! :previous_document_id? => false

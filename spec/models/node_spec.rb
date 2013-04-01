@@ -70,5 +70,11 @@ describe Node do
         subject.original_document.should == original
       end
     end
+    describe "#original_language" do
+      it "should delegate to the original document" do
+        subject.should_receive(:original_document).and_return(mock(:document, language: "LANG"))
+        subject.original_language.should == "LANG"
+      end
+    end
   end
 end
