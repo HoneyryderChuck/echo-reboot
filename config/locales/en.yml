@@ -8,7 +8,7 @@ en:
       invalid_context: Context invalid for the given entity
 
   enumerations:
-    about_categories:
+    about_category:
       core_team: Core Team
       supporters: External Staff & Supporters
       translators: Translators
@@ -28,34 +28,34 @@ en:
       video: Video
       law: Law
       document: Document
-    language_levels:
+    language_level:
       mother_tongue: Mother Tongue
       advanced: Advanced
       intermediate: Intermediate
       basic: Basic
-    languages:
+    language:
       en: English
       de: German
       fr: French
       pt: Portuguese
       es: Spanish
       hu: Hungarian
-    organization_types:
+    organization_type:
       ngo: NGO
       political: Political
       scientific: Scientific
       trade_union: Trade Union
       social_business: Social Business
       profit_driven_business: Profit-Driven Business
-    statement_actions:
+    statement_action:
       new: New
       edit: Edit
       translate: Translate
       incorporate: Incorporate
-    statement_states:
+    statement_state:
       new: New
       published: Published
-    tag_contexts:
+    tag_context:
       affection: Affection
       engagement: Engagement
       expertise: Expertise
@@ -63,4 +63,1048 @@ en:
       field_of_work: Field of Work
       field_of_activity: Field of Activity
       topic: Topic
+
+  application:
+
+    # Unexpected Error
+    unexpected_error: An unexpected error has occurred. Sorry for the inconvenience.
+    routing_error: Unknown URL. Redirecting...
+    remote_error: 'Failed to communicate with the Remote Service.'
+
+    # General purpose resources
+    general:
+      more: more »
+      hide: « okay
+      next: Next
+      back: Back
+      name: Name
+      undefined: Not yet entered
+      email: E-Mail
+      email_confirmation: Confirm E-Mail
+      ok: Ok
+      or: or
+      save: Save
+      edit: Edit
+      cancel: Cancel
+      close: Close
+      send: Send
+      upload: Upload
+      delete: Delete
+      create: Add
+      incorporate: Incorporate
+      welcome: Welcome
+      all: All
+      authors: Authors
+      share_action: 'Make an echo!'
+
+    # Roadmap - Progress
+    roadmap:
+      title: Roadmap
+      progress_tooltip: 'This area of echo is %{progress}% ready.'
+      status_quo: 'Status Quo'
+      next_steps: 'Next Steps'
+      vision: 'At The End of The Road'
+      discuss:
+        status_quo: 'echo "Discuss" is currently <strong>%{progress}% ready</strong>.'
+        next_steps: 'The first features of echo "Discuss" have been released. Its functionality will be extended step by step in the next releases.'
+      connect:
+        status_quo: 'echo "Connect" is currently <strong>%{progress}% ready</strong>.'
+        next_steps: 'echo "Connect" will be enhanced after the first features of echo "Discuss" and echo "Act" have been released.'
+      act:
+        status_quo: 'echo "Act" is currently <strong>%{progress}% ready</strong>.'
+        next_steps: 'The development of echo "Act" will begin after the first functions of echo "Discuss" have been released.'
+      my_echo:
+        status_quo: 'The "My echo" area is currently <strong>%{progress}% ready</strong>.'
+        next_steps: 'Further development of this area is planned after some basic functionality of "Discuss, Connect and Act" has been released.'
+        vision: |
+         <p>
+         In the long term, the My echo area will be your <strong>personal information hub</strong> inside of echo. E.g. it will provide
+         you with the most <strong>important news</strong> and call your attention to the most <strong>recent discussions and actions</strong> according
+         to your preferences.
+         </p>
+
+  help:
+    discuss:
+      closed_discussions:
+        hint: Tags to create closed discussions...
+        text: |
+          <p>Defining a *tag (starting with ONE *) will make this discussion semi-closed. Users must define the same
+          *tag as a decision making tag in their profile to be able to participate in the discussion, however it
+          will remain visible and transparent to the outside world.</p>
+          <p>Defining a **tag (with TWO **) will make this discussion fully closed. It will only be visible for users
+          having the same **tag as a decision making tag in their profile.</p>
+          <p>Please note, that this is just a temporary solution to facilitate closed discussions in echo. The real
+          solution with circles, invitations and fine-graded access right management will be coming later.</p>
+    profile:
+      closed_discussions:
+        hint: Tags to access closed discussions...
+        text: |
+          <p>Here you can enter the appropriate *tags and **tags as decision making tags. This will allow you to
+          take part in transparent, semi-closed discussions (tagged with *tag) and to see closed, internal
+          ones (protected with **tag) respectively.</p>
+          <p>Please note, that this is just a temporary solution to facilitate closed discussions in echo. The real
+          solution with circles, invitations and fine-graded access right management will be coming later.</p>
+
+  # Localizations for the layout components
+  layouts:
+    tabs:
+      discuss: Discuss
+      connect: Connect
+      act: Act
+      my_echo: My echo
+      admin: Admin
+
+    outer_menu:
+      language: Language
+      feedback: &feedback Feedback
+      about: &about About us
+      logout: Logout
+      imprint: &imprint Imprint
+      data_privacy: &data_privacy Data Privacy
+
+    discuss:
+      tabs:
+
+    connect:
+      tabs:
+        search: Explore Community
+
+    act:
+      tabs:
+
+    my_echo:
+      tabs:
+        welcome: Welcome
+        profile: My Profile
+        settings: Settings
+      profile_complete: '%{complete}% complete'
+
+
+  # ------------
+  # USERS MODULE
+  # ------------
+
+  users:
+    anonym: Anonym
+    authors:
+      teaser:
+        title: 'Become a co-author!'
+
+    remote_auth:
+      input_default:
+        openid: Your OpenID URL
+    signup:
+      label: 'Register'
+      member_tag: Not a member yet?
+      via_echo: '... via E-Mail'
+      via_social: '... via existing account'
+    setup_basic_profile:
+      title: 'Setup Basic Profile'
+      guide: Please fill in your basic profile information to set up your account.
+      agreement: I have read and agree to the terms of data policy.
+      use_photo: 'Use in echo, too'
+    signin:
+      label: 'Login'
+      password: 'Password'
+      member_tag: Already a member?
+      via_echo: '... via echo'
+      via_social: '... via a connected account'
+      set_password: Forgot your password?
+      remember: Remember me!
+      hello: Logged in<br/><strong>%{name}</strong>
+      hint: |
+        To prevent others from logging in without having to enter your password,
+        please logout of the used social account (e.g. Facebook, Twitter) in the end explicitely.
+      messages:
+        success: "Login successful. Welcome back to echo."
+        failed: "Unknown user or wrong password."
+        failed_social: Please log in with an account you registered with or that you connected to your echo account.
+    signout:
+      messages:
+        success: "Logout successful. Please don't forget to also logout from Facebook & co. See you later. Bye!"
+    user_sessions:
+      messages:
+        session_timeout: "Your session has expired. Please log in again."
+
+    # Activations section
+    activation:
+      messages:
+        success: Your account has been successfully created. Welcome to echo!
+        failed: |-
+          <p>Your account could not be activated. Please check your input.</p>
+        email_success: Your E-mail has been changed successfully!
+        already_active: Your account is already active!
+        no_account: Your account does not exist!
+        no_full_name: Please fill in your full name.
+        no_agreement: Please confirm our data policy in order to register.
+
+    # Password resets section
+    password_reset:
+      step1: Require new password
+      step2: Define new password
+      step1_text: |
+        <p>Forgot your password or you would simply like to define a new one?</p>
+        <p>No problem! Just fill in your E-Mail address you used to register in echo.
+        We will send you an E-mail shortly allowing you to define a new password.</p>
+      step1_mail: Send E-Mail
+
+      step2_text: |
+        Please define your new password you would like to use to log in to echo.
+      step2_ok: Set new password
+      messages:
+        success: "We have sent you an E-mail allowing you to reset your password. Please check your inbox."
+        not_found: "Unknown E-Mail address."
+        reset_success: "Your new password has been saved successfully."
+        reset_failed: "Your password could not be updated. Please check your input."
+
+    # Profile Section
+    profile:
+      to: Go to profile
+      title: Personal Information
+      edit_title: Edit your personal information
+      guide: Below you find your basic personal information. Please press the Edit button to change it.
+
+      gender:
+        male: Male
+        female: Female
+
+      location: Location
+
+      password:
+        title: Change password
+        old: Current password
+        new: New password
+        confirm: Confirm new password
+
+      picture:
+        upload_button: Change
+
+
+      upload_picture:
+        title: Upload Picture
+        guide: Please <strong>select a picture</strong> (JPG or PNG, max. 5MB) and upload it.
+        progress: Your avatar is being uploaded. Please wait...
+
+      messages:
+        updated: "Profile information updated successfully."
+        image_invalid: 'is invalid or inaccessible'
+
+    # Spoken Languages section
+    spoken_languages:
+      title: Language Skills
+      guide: |
+        Here you can enter your language skills to <strong>see content only in languages you speak</strong>.<br/>
+        Additionally, it will enable you to contribute to echos cross-language, intercultural dialogs by
+        <strong>translating statements</strong> between languages you speak <strong>at least intermediate level</strong>.
+        This is to ensure good content quality.<br/>
+        Please don't forget to also set your <strong>mother language</strong>.
+      language: Language
+      level: Level
+      error_messages:
+        repeated_instance: This language is already defined.
+
+    # Memberships section
+    memberships:
+      title: Activities
+      guide: Here you can enter your voluntary, professional and other kinds of activities in different organisations.
+      organisation: Organisation
+      position: My role
+
+    # Web profiles section
+    web_addresses:
+      title: Web Addresses
+      guide: |
+        Here you can enter some of your contact data and other web profiles.<br/>
+        <strong>PLEASE NOTE</strong>: for now, all information entered here will be
+        <strong>visible to all members</strong> of the echo community.
+      type: Kind of address
+      address: Web Address
+
+    # Concernments section
+    concernments:
+      title: Concernments & Competences
+      guide: |
+        All of us have <strong>different facets</strong>. In some areas we might be impacted and need help from others,
+        in other areas we engage ourselves and offer help to others. In certain fields we have professional expertise,
+        in others we might represent other people and make decisions.<br/>
+        echo helps like-minded people to find each other with <strong>knowledge complementing each other</strong>.<br/>
+        Which <strong>keywords (tags)</strong> would you describe <strong>your concernments and competences</strong> with?
+      sorts:
+        affection: <strong>Impacted</strong> by
+        engagement: <strong>Engaged</strong> in
+        expertise: <strong>Expert</strong> in the field of
+        decision_making: <strong>Decision maker</strong> in the field of
+      tags: Keywords (tags)
+
+    # Email notifications section
+    notifications:
+      title: E-Mail Notification Settings
+      guide: Here you can set whether you would like to receive E-Mail notifications on different subjects.
+
+      newsletter:
+        title: Newsletter
+        guide: Receive echo newsletter.
+        turned_on: You have subscribed to the echo newsletter.
+        turned_off: You have unsubscribed from the echo newsletter.
+
+      activity:
+        title: Activity Notifications
+        guide: Daily updates on new discussions and new statements in discussions you were active in.
+        turned_on: Activity notifications have been switched on.
+        turned_off: Activity notifications have been switched off.
+
+      drafting:
+        title: Drafting Notifications
+        guide: |
+          Immediate updates to follow the co-creative drafting process of your proposals and additions -
+          e.g. when your additions were approved to be incorporated.<br/><br/>
+          <strong>Attention!</strong> If this notification is turned off, you might easily miss the opportunity to
+          incorporate your additional ideas into proposals you support.
+        turned_on: Drafting notifications have been switched on.
+        turned_off: Drafting notifications have been switched off.
+
+    # Permissions section
+    permissions:
+      title: Privacy Settings
+      guide: Where in echo your personal data should be shown or be hidden?
+      authorship:
+        title: Authorship of statements
+        guide: Let other logged in members (but no search engines) see your profile information as being a co-author of a statement in echo Discuss.
+        turned_on: Your profile information will be shown when displaying co-authors of statements.
+        turned_off: You will be displayed as Anonym among other authors of a statement.
+
+    # Manage Echo Account section
+    echo_account:
+      title: echo Account
+      guide: Here you can manage your echo account.
+      change_email:
+        title: Change E-Mail
+        guide: |
+          You are currently registered with the E-Mail address: <strong>%{email}</strong>.<br/>
+          Here you can define a new address echo should use to keep in touch with you.
+        password: Your Password
+        success: E-Mail changed successfully.
+        failed: Failed to change E-Mail.
+        no_password: Please enter your valid password to change your E-Mail.
+
+      change_password:
+        title: Change Password
+        guide: Please define your new password.
+        success: Your password has been changed successfully.
+        failed: Failed to change your password.
+        wrong_password: The entered current password is wrong.
+
+      delete_account:
+        title: Delete Account
+        password: Your Password
+        guide: |
+          <p><strong>ATTENTION!</strong></p>
+          <p>Your account and ALL your personal data will be <strong>permanently deleted</strong>.<br/>
+          The echos you have made will be kept fully anonymously.</p>
+          <p>Please enter your password and click the button below, if you want to proceed.</p>
+        confirm: Delete my account permanently
+        success: Your echo account was successfully deleted.
+    social_accounts:
+      title: Social Accounts
+      guide: Connect up your accounts to easily share and amplify your echo via other social networks.
+      providers:
+        facebook: Facebook
+        twitter: Twitter
+        yahoo!: Yahoo!
+        linkedin: LinkedIn
+        google: Google
+      connect:
+        title: Connect
+        success: Your %{account} account has been connected successfully.
+        failed: Failed to connect to your %{account} account.
+      disconnect:
+        title: Disconnect
+        success: Your %{account} account has been disconnected.
+        failed: Failed to disconnect your %{account} account.
+      share:
+        title: Spread the word
+        guide: Make an echo in your social networks.
+        text: Message
+        data_privacy:
+          title: Data Privacy Notice
+          description: Mind the privacy policy of other networks before sharing your views on them...
+        preview: Preview
+        submit: Send echo
+        error: Something went wrong while sharing your echo. Please check your network connection.
+        success: |
+          Made an echo via %{accounts}.
+        failed: |
+          Failed to share via %{accounts}.
+        timeout: |
+          Connection with %{accounts} timed out!
+        enabled: "On"
+        disabled: "Off"
+
+
+    # New Users section
+    users:
+      new:
+        title: Your echo
+        subtitle: Join echo
+        text: |
+          <p>
+          <strong>echo is democracy from the people for the people.</strong>
+          </p><p>
+          Join us now to participate!
+          </p>
+        action: 'Join now!'
+
+      messages:
+        created: "Please check your E-Mails to activate your newly created account!"
+        activate_email: In order to complete the E-Mail address modification, please log out and press the confimation link sent to your new E-Mail address!
+
+    # Reports section
+    reports:
+      new:
+        title:  "Report user"
+        text: |
+          <p>Did you see <strong>offensive, unethical or illegal content?</strong><br/>
+          If so, here you can report the user to our administrative team.
+          </p><p>
+          We will check the issue as soon as possible.
+          </p>
+      messages:
+        created: "Thank you for your message. An administrator was notified."
+
+
+  # ---------------
+  # Discuss section
+  # ---------------
+
+  discuss:
+    my_questions:
+      link: My Questions
+      title: My new & published questions
+      no_questions: |
+        You haven't created any questions yet. To do so, please click on the question mark button on the left.
+      add: Add New Question
+    translation_request: Please translate this statement to <strong>ENGLISH</strong>.
+    mixed_languages: Mixed up languages
+    set_languages: Set your <strong>LANGUAGE SKILLS</strong> - Wipe out the noise!
+    no_locale_language: Do you speak ENGLISH?
+    adjust_languages: Please define your <strong>ENGLISH language skills</strong>!
+    results_count:
+      one: '%{count} question'
+      more: '%{count} questions'
+    for: |-
+      for '%{value}'
+    featured_topics:
+      title: Featured Topics
+      tabs:
+        echo:
+          title: About echo
+        pilot_projects:
+          title: Pilot Projects
+    search:
+      title: Search
+      in: '... in %{category} ...'
+      add: "Create the first question about the topic"
+      placeholder: "Topic and/or place of interest"
+
+    tooltips:
+      read_question: 'Go to this question'
+      read_proposal: 'Read this proposal'
+      read_improvement: 'Read this addition'
+      read_pro_argument: 'Read this PRO argument'
+      read_contra_argument: 'Read this CONTRA argument'
+      read_follow_up_question: 'Read this follow-up question'
+      current_question: 'The currently displayed question'
+      current_proposal: 'The currently displayed proposal'
+      current_improvement: 'The currently displayed addition'
+      current_pro_argument: 'The currently displayed PRO argument'
+      current_contra_argument: 'The currently displayed CONTRA argument'
+      current_background_info: 'The currently displayed background info'
+      current_follow_up_question: 'The currently displayed follow-up question'
+      back_to_question: 'Back to current question'
+      back_to_proposal: 'Back to current proposal'
+      back_to_improvement: 'Back to current addition'
+      prev_question: 'Read previous question in the context shown above'
+      next_question: 'Read next question in the context shown above'
+      prev_proposal: 'Read previous proposal for the current question'
+      next_proposal: 'Read next proposal for the current question'
+      prev_improvement: 'Read previous addition for the current proposal'
+      next_improvement: 'Read next addition for the current proposal'
+      prev_pro_argument: 'Read previous argument for the current proposal'
+      next_pro_argument: 'Read next argument for the current proposal'
+      prev_contra_argument: 'Read previous argument for the current proposal'
+      next_contra_argument: 'Read next argument for the current proposal'
+      prev_background_info: 'See previous background info for the current statement'
+      next_background_info: 'See next background info for the current statement'
+      prev_follow_up_question: 'Read previous follow-up question in the context shown above'
+      next_follow_up_question: 'Read next follow-up question in the context shown above'
+      create_question: 'Create a new question'
+      create_proposal: "Post a new proposal for the current question"
+      create_improvement: "Post a new addition to the current proposal"
+      create_pro_argument: "Post a new PRO argument to the current proposal"
+      create_contra_argument: "Post a new CONTRA argument to the current proposal"
+      create_alternative: "Post a new opposition to this statement"
+      create_background_info: "Recommend a new piece of background information related to this statement"
+      create_follow_up_question: "Post a new new follow-up question concerning this statement"
+      create_discuss_alternatives_question: "Post a new alternative debate concerning this alternative view"
+      echo: 'echo this statement to support it!'
+      unecho: 'Withdraw your echo to stop supporting this statement'
+      publish: |
+        Release the question to make it visible for everybody.
+        (Afterwards no further editing is possible.)
+      incorporate: 'Click here to incorporate this addition into the proposal above.'
+      siblings:
+        question: See all questions in the context shown above
+        proposal: See all proposals belonging to the current question
+        improvement: See all additions proposed for the current proposal
+        argument: See all arguments belonging to the current proposal
+        pro_argument: See all arguments belonging to the current proposal
+        contra_argument:  See all arguments belonging to the current proposal
+        background_info:  See all background infos belonging to the current statement
+        alternative: See all alternatives from the the previous statement
+      link_statement: |-
+        Enter a part of the title or paste in the URL of a statement.
+        Afterwards press this button to reuse the statement in the current context.
+      unlink_statement: "Click the button again to unlink the statement."
+      close_alternative_mode: "Exit Alternative Mode"
+
+    statements:
+      label: 'votes'
+      echo_link: 'Support (echo)'
+      unecho_link: 'Withdraw vote'
+      echo_indicator:
+        one: '1 supporter'
+        other: '%{count} supporters'
+
+      add_new: New statement
+      embed_button: Embed
+      embed_search_title: Embed search results
+      embed_search_hint: |-
+        Copy and paste the code below to embed these search results into YOUR website and make an echo in your community.
+      embed_statement_title: Embed statement
+      embed_statement_hint: |-
+        Copy and paste the code below to embed this statement into YOUR website and make an echo in your community.
+      copy_url: Link to
+      copy_url_title: Link to statement
+      copy_url_hint: 'Copy the link to this statement and use it to spread the word via your favorite channels.'
+
+      create_question_link: 'Create new question'
+      create_proposal_link: Add new proposal
+      create_internal_link: 'New idea?'
+      create_improvement_link: Propose new addition
+      create_pro_argument_link: Add new PRO argument
+      create_contra_argument_link: Add new CONTRA argument
+      create_alternative_link: Add new opposition
+      create_background_info_link: Add new background info
+      create_follow_up_question_link: Add new follow-up question
+      create_discuss_alternatives_question_link: Open follow-up discussion on the alternatives
+      preview_embedded_content: Preview
+      open_embedded_content: Open in new window
+
+      statement_language_hint: |
+        Please set your language skills in your <a href='%{url}'>Profile</a>.
+      statement_language_hint_tooltip: |
+        This will enable you to enter statements in any language you speak at least at intermediate level.
+      drafting_language_hint: |
+        Please note, that the collective advancement of this proposal will only be possible in the selected language!
+      fuq_formulation_hint: |
+        Since follow-up questions also appear as questions in "Search", title and description should both be
+        comprehensible independently of the original discussion.
+      tag_permission: |
+        You do not have the permission to insert the '%{tag}' tag.
+      read_permission: |
+        You do not have permission to read this statement.
+      title_hint:
+        question: Enter the question title in... English?
+        proposal: Enter the proposal title in... English?
+        improvement: Enter the addition title in... English?
+        pro_argument: Enter the PRO argument title in... English?
+        contra_argument: Enter the CONTRA argument title in... English?
+        background_info: Enter the background info title in... English?
+        follow_up_question: Enter the follow-up question title in... English?
+        discuss_alternatives_question: Enter the alternatives question title in... English?
+      text_hint:
+        alternative_prefix: |
+          OPPOSITIONS are mutually exclusive to the original statement and all its other alternatives.<br/><br/>
+        question: Please describe the issue in more detail and ask a concrete question...
+        proposal: |
+          Please describe your proposal in more detail...<br/><br/>
+          Depending on the kind of question, a proposal can be understood as a possible answer,
+          solution approach or position to the question.
+        improvement: |
+          Please describe your addition or amendment to the proposal in more detail...<br/><br/>
+          These additions serve as a basis for echos democratic process of joint elaboration and
+          improvement of proposals. The authors of the additions with the greatest support are regularly given the
+          opportunity to incorporate their ideas and thoughts into the proposal.
+        pro_argument: Please describe your point FOR the proposal in more detail...
+        contra_argument: Please describe your point AGAINST the proposal in more detail...
+        background_info: |
+          Please describe the recommended background information shortly and tell why you
+          think it is interesting in this context...
+        follow_up_question: Please describe your follow-up question in more detail...
+        discuss_alternatives_question: Please describe the theme of this alternative question in more detail...
+      tag_hint: 'Enter tags here...'
+      info_url_hint: 'Enter the link to the external content'
+
+      publish: Release
+      published: The question has been released successfully.
+      edit: 'Edit %{type}'
+
+      types:
+        question:  'Question'
+        proposal:  'Proposal'
+        improvement: 'Addition'
+        pro_argument: 'Pro Argument'
+        contra_argument: 'Contra Argument'
+        alternative: 'Opposition'
+        background_info: 'Background Info'
+        discuss_alternatives_question: 'Alternatives Discussion'
+        follow_up_question: 'Follow-Up Question'
+      new:
+        question: 'New Question'
+        proposal: 'New Proposal'
+        improvement: 'New Addition'
+        pro_argument: 'New Pro Argument'
+        contra_argument: 'New Contra Argument'
+        background_info: 'New Background Info'
+        discuss_alternatives_question: 'New Alternatives Discussion'
+        follow_up_question: 'New Follow-Up Question'
+      headings:
+        question: 'Questions'
+        proposal: 'Proposals'
+        improvement: 'Additions'
+        argument: 'Pros & Cons'
+        alternatives: 'Alternatives'
+        background_info: 'Background Infos'
+        follow_up_question: 'Follow-up Questions'
+        alternative: 'Alternative'
+      sibling_labels:
+        question: 'Questions'
+        proposal: 'Proposals'
+        improvement: 'Additions'
+        argument: 'Arguments'
+        background_info: 'Backgrounds'
+        alternative: 'Alternatives'
+        discuss_alternatives_question: 'Questions'
+        follow_up_question: 'Questions'
+      siblings:
+        background_info: 'Background Infos'
+        follow_up_question: 'Follow-up Question in the context shown above'
+
+      topic: Topic (Tags / Keywords)
+      states:
+        label: 'Publish question immediately?'
+        initial_state:
+          new: 'Set up at first and publish later'
+          published: 'Publish immediately (further editing will be limited)'
+        published: Released
+        approved: Approved
+      top_level:
+        label: 'Is this a top-level question?'
+        initial_state:
+          true_value: 'Yes, it is'
+          false_value: 'No, it is not'
+      delete_link: 'Delete'
+      delete_confirmation: 'Are you sure you want to delete this statement?'
+      read_only_permission: |-
+        This is a transparent but currently closed discussion, you are only allowed to read.
+      unsupported_parent: |-
+        You can only support additions if you support the proposal itself.
+      not_approved_any_more: |-
+        Unfortunately, this addition cannot be incorporated any longer.
+      see_parent_if_approved: |-
+        The requested addition is currently approved to be incorporated into the proposal below.
+      see_parent_if_incorporated: |-
+        The requested addition has already been incorporated into the proposal below.
+      being_edited: |-
+        The statement is currently being edited. Please try again later.
+      statement_updated: |-
+        This %{type} has just been updated by another person.
+      statement_supported: |-
+        Thanks for making an echo to the %{type}.
+      statement_unsupported: |-
+        You withdrew your echo from the %{type}.
+      edit_period_hint: |
+        You have <strong>%{minutes} minutes</strong> to edit the statement.
+        Afterwards, your modifications might even get discarded.
+      staled_modification: 'We are very sorry, but you exceeded the 60 minutes limit to edit and save the statement. Meanwhile it has already been updated by a different user. Therefore, your changes must have been unfortunately discarded.'
+      no_document_in_language: 'The statement does not exist in English yet.'
+      supporter_to_share: 'You must be a supporter of this statement in order to share it!'
+      published_to_share: 'This discussion is yet to be published. Until then, it is not possible to share it.'
+      cannot_be_edited: Unfortunately, you cannot edit this statement after other members supported it. This is to avoid faking of opinions.
+      cannot_be_linked: Unfortunately this statement cannot be linked in the current context.
+      echos_label: Support
+
+      linking:
+        disabled: Link
+        enabled: Linked
+
+      breadcrumbs:
+        discuss_search: Search results
+        my_questions: My Questions
+        labels:
+          ds: ''
+          mi: ''
+          sr: 'Questions found for'
+          pr: 'Proposals for'
+          im: 'Additions for'
+          ar: 'Arguments for'
+          bi: 'Background Infos for'
+          fq: 'Follow-up Questions for'
+          jp: 'Following link in'
+          al: 'Oppositions for'
+          dq: 'Deepening discussion coming from'
+          over:
+            ds: 'Back to'
+            mi: 'Back to'
+            sr: 'Back to search results for'
+            pr: 'Back to'
+            im: 'Back to'
+            ar: 'Back to'
+            bi: 'Back to'
+            fq: 'Back to'
+            jp: 'Back to'
+            al: 'Back to'
+            dq: 'Back to'
+
+      upload_image:
+        title: Upload Image
+        guide: Please <strong>select an image</strong> (JPG or PNG, max. 5MB) and upload it.
+        progress: The image is being uploaded. Please wait...
+        error: The image couldn't be applied. Please upload a supported format (JPG or PNG and max. 5MB).
+
+      add_teaser:
+        question: |
+          This is where YOUR question could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        proposal: |
+          This is where YOUR proposal to the question could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        improvement: |
+          This is where YOUR addition or amendment to the proposal could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        pro_argument: |
+          This is where your argument FOR the proposal could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        contra_argument: |
+          This is where your argument AGAINST the proposal could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        background_info: |
+          This is where a new background info related to the current statement could appear.<br/><br/>
+          Would you like to recommend one?<br/><br/>
+          Press the button above to enter it NOW!
+        follow_up_question: |
+          This is where YOUR follow-up question could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+        alternative: |
+          This is where YOUR opposition could appear.<br/><br/>Have you got one?<br/><br/>
+          Press the button above to enter it NOW!
+    summary:
+      title: 'Summary'
+
+    messages:
+      created: "The new %{type} has been entered successfully."
+      updated: "The %{type} has been updated successfully."
+      deleted: "The %{type} has been deleted successfully."
+      translated: "The %{type} has been translated successfully."
+      incorporated: "The addition has been successfully incorporated into the proposal."
+      image_uploaded: "The illustration image has been added to the %{type}."
+      new_percentage: "Your profile is %{percentage}% complete."
+
+
+
+  # ---------------
+  # Connect section
+  # ---------------
+
+  connect:
+    fill_out_profile:
+      text: Please fill out <strong>at least %{percentage}%</strong> of your profile to make "the computer" happy and let this block disappear. :-)
+      name: 'My Profile'
+      description: 'Complete your profile to present yourself in the echo community.'
+    placeholder: 'Topic, place, organization or name of interest'
+
+    segments:
+      all:       'All'
+      affection:  'Impacted'
+      engagement:   'Engaged'
+      expertise: 'Experts'
+      decision_making: 'Decision Makers'
+    results_count:
+      all:
+        no_filter:
+          one: 'person'
+          more: 'people'
+        with_filter:
+          one: "person related to '%{filter}'"
+          more: "people related to '%{filter}'"
+      affection:
+        no_filter:
+          one: impacted person
+          more: impacted people
+        with_filter:
+          one: "person impacted by '%{filter}'"
+          more: "people impacted by '%{filter}'"
+      engagement:
+        no_filter:
+          one: engaged person
+          more: engaged people
+        with_filter:
+          one: "person engaged in '%{filter}'"
+          more: "people engaged in '%{filter}'"
+      expertise:
+        no_filter:
+          one: expert
+          more: experts
+        with_filter:
+          one: "expert in '%{filter}'"
+          more: "experts in '%{filter}'"
+      decision_making:
+        no_filter:
+          one: decision maker
+          more: decision makers
+        with_filter:
+          one: "decision maker in '%{filter}'"
+          more: "decision makers in '%{filter}'"
+    details:
+      tabs:
+        overview:     'Overview'
+        concernments: 'Competences'
+        web_addresses: 'Web Addresses'
+      actions:
+        report: "Report"
+        send_mail: "Send Message"
+    messages:
+      empty:           'No members found. Please change your search criteria.'
+      no_concernments: "This member hasn't defined any concernments and competences, yet."
+      no_web_addresses: "This member hasn't defined any web addresses, yet."
+
+  # Feedback resources
+  feedback:
+    new:
+      title: Feedback
+      welcome: |
+        <p>
+        <strong>We are happy to hear your opinion!</strong><br/>
+        </p><p>
+        Do not hesitate to ask questions, make comments or to leave a criticism or kudos for us.
+        </p>
+      message: Message
+      send: Send message
+    create:
+      thank_you: Thank you for your feedback.
+
+  user_mail:
+    new:
+      title: Send Mail
+      guide: Here you can send an E-Mail to contact the selected echo member.
+      subject: Subject
+      text: Message
+    create:
+      thank_you: Your message has been sent successfully.
+
+  activerecord:
+    errors:
+      models:
+        feedback:
+          attributes:
+            blank: 'Please fill out all fields.'
+            email:
+              invalid: 'Please enter a valid E-Mail address.'
+        newsletter:
+          attributes:
+            blank: 'Please fill out all fields.'
+            email:
+              invalid: 'Please enter a valid E-Mail address.'
+
+        user:
+          attributes:
+            email:
+              taken: 'The E-Mail address is already in use.'
+              invalid: 'Please enter a valid E-Mail address.'
+            password:
+              invalid: 'Wrong password.'
+        social_identifier:
+          taken: 'This Social Account is already in use. Please log in with it!'
+
+
+      messages:
+        blank: "The field '%{attribute}' must not be empty."
+        taken: 'Is already in use.'
+        too_short: "Your input for '%{attribute}' is too short."
+        too_long: "Your input for '%{attribute}' is too long."
+        invalid: "Your input for '%{attribute}' must be in a valid format."
+        confirmation: '%{attribute} confirmation does not match.'
+        access_denied: "You are not allowed to perform this action."
+
+      template:
+        header:
+          one: "One of the fields is filled incorrectly."
+          other: "%{count} fields are filled incorrectly."
+        body: "Please correct the following:"
+
+    attributes:
+      profile:
+        email:      E-Mail
+        full_name:  Name
+        gender:     Gender
+        city:       City
+        country:    Country
+        location:   Location
+        about_me:   About me
+        motivation: Thoughts about echo
+        memberships: Activities
+        spoken_languages: Language skills
+      report:
+        reason:     'Reason'
+      web_address:
+        location:   'Web Address'
+      membership:
+        position: My role
+      statement_node:
+        image: 'Image file'
+      statement_document:
+        language_id: 'Language'
+        language: 'Language'
+        title: 'Title'
+        text: 'Summary'
+        image: 'Illustration'
+      statement:
+        info_type_id: 'Content Type'
+      statement_data:
+        info_url: 'Background Info Link'
+      about_item:
+        photo: 'Photo'
+        name: 'Name'
+        responsibility: 'Responsibility'
+        description: 'Description'
+        about_category_id: 'About Item'
+        index: 'Index'
+
+    models:
+      question: "question"
+      proposal: "proposal"
+      improvement: "addition"
+      pro_argument: 'pro argument'
+      contra_argument: 'contra argument'
+      follow_up_question: 'follow-up question'
+
+
+  authlogic:
+    error_messages:
+      email_invalid:      "Please enter a correct e-mail address."
+      password_blank:     "Password must be defined."
+      not_active:         "Your account has not been activated yet. Please check your inbox."
+      must_be_logged_in:  "Please log in to perform this action."
+      must_be_logged_out: "Please log out to perform this action."
+
+    attributes:
+      user_session:
+        email: E-Mail
+        password: Password
+
+  # Date and time formatting
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
+      month_name: "%B"
+      day_name: "%a"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Su, Mo, Tu, We, Th, Fr, Sa]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, Mai, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+#    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      default: "%a, %d. %B %Y"
+      short: "%e. %B, %H:%M o'clock"
+      long: "%A, %e. %B %Y, %H:%M o'clock"
+      time: "%H:%M"
+
+    am: "in the morning"
+    pm: "in the afternoon"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'half a minute'
+      less_than_x_seconds:
+        zero: 'less than 1 second'
+        one: 'less than 1 second'
+        other: 'less than %{count} seconds'
+      x_seconds:
+        one: '1 second'
+        other: '%{count} seconds'
+      less_than_x_minutes:
+        zero: 'less than 1 minute'
+        one: 'less than one minute'
+        other: 'less than %{count} minutes'
+      x_minutes:
+        one: '1 minute'
+        other: '%{count} minutes'
+      about_x_hours:
+        one: 'about 1 hour'
+        other: 'about %{count} hours'
+      x_days:
+        one: '1 day'
+        other: '%{count} days'
+      about_x_months:
+        one: 'about 1 month'
+        other: 'about %{count} months'
+      x_months:
+        one: '1 month'
+        other: '%{count} months'
+      about_x_years:
+        one: 'about 1 year'
+        other: 'about %{count} years'
+      over_x_years:
+        one: 'over 1 year'
+        other: 'over %{count} years'
+    prompts:
+      second: "seconds"
+      minute: "minutes"
+      hour: "hours"
+      day: "day"
+      month: "month"
+      year: "year"
+
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: '€'
+        format: '%n%u'
+        separator:
+        delimiter:
+        precision:
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+  newsletters:
+    send_confirmation: Are you sure?
 

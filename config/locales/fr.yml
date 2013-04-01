@@ -1,6 +1,6 @@
 fr:
   enumerations:
-    about_categories:
+    about_category:
       core_team: Coeur équipe
       supporters: Personnel Externe & Collaborateurs
       translators: Traducteurs
@@ -18,33 +18,33 @@ fr:
       video: Vidéo
       law: Loi
       document: Document
-    language_levels:
+    language_level:
       mother_tongue: Langue Maternelle
       advanced: Avancé
       intermediate: Intermédiaire
       basic: Basique
-    languages:
+    language:
       en: Anglais
       de: Allemand
       fr: Français
       pt: Portugais
       es: Espagnol
       hu: Hongrois
-    organization_types:
+    organization_type:
       ngo: ONG
       political: Politique
       scientific: Scientifique
       trade_union: Syndicat
       profit_driven_business: Firma à but lucratif
-    statement_actions:
+    statement_action:
       new: Neuf
       edit: Éditer
       translate: Traduire
       incorporate: Incorporer
-    statement_states:
+    statement_state:
       new: Neuf
       published: Publié
-    tag_contexts:
+    tag_context:
       affection: Affection
       engagement: Engagement
       expertise: Expertise
@@ -53,4 +53,1076 @@ fr:
       field_of_activity: Domaine d'activité
       topic: Sujet
 
+  application:
 
+    # Unexpected Error
+    unexpected_error: Zut ..encore un bug informatique. Nous sommes désolés de ce désagrément.
+    routing_error: URL inconnue. Redirection...
+    remote_error: 'La communication avec le support technique a échoué.'
+
+    # General purpose resources
+    general:
+      more: plus »
+      hide: « d'accord
+      next: Suite
+      back: Retour
+      email: E-Mail
+      email_confirmation: Confirmer votre E-Mail
+      name: Nom
+      undefined: Vous n'êtes pas encore enregistré(e)?
+      ok: D'accord
+      or: ou
+      save: Sauvegarder
+      edit: Editer
+      cancel: Interrompre
+      close: Fermer
+      send: Envoyer
+      upload: Télécharger
+      delete: Effacer
+      create: Ajouter
+      incorporate: Incorporer
+      welcome: Bienvenue
+      all: Tous
+      authors: Auteurs
+      share_action: 'Make an echo!'
+
+    # Roadmap - progrès
+    roadmap:
+      title: Feuille de route
+      progress_tooltip: 'Cette section est réalisée à %{progress}%.'
+      status_quo: 'Status Quo'
+      next_steps: 'Les prochains pas'
+      vision: 'A la fin du parcours'
+      discuss:
+        status_quo: |
+          L'espace "discussions" est fermé <strong>%{progress}% terminé</strong>.
+        next_steps: 'Les premières fonctionnalités de discussion sont terminées et seront sans cesse mises à jour.'
+      connect:
+        status_quo: |
+          L'espace "Connecter" est fermé <strong>%{progress}%</strong>.
+        next_steps: |
+          Une recherche simple de personne est publiée. Le développement de l'espace "Connecter" se
+          poursuivra dès que les premières foncitionnalités  dans "Discuter" et "Agir" seront prêtes.
+      act:
+        status_quo: |
+          L'espace "Agir" " est fermé <strong>%{progress}%</strong>.
+        next_steps: |
+          Le développement de la partie "Agir" commencera après la publication des premières fonctionnalités
+          de la partie "Discuter"
+      my_echo:
+        status_quo: |
+          L'espace "mon echo" est fermé <strong>%{progress}%</strong>.
+        next_steps: |
+          De développements ultérieurs sont prévus pour l'espace "mon echo" après la publication des
+          fonctionnalités de base sous la rubrique "discuter", "Connecter" et "Agir"
+        vision: |
+         <p>
+         "Mon echo" deviendra la <strong>plate-forme personnelle d'information</strong> sur echo.
+         Veuillez trouver ici une vue d'ensemble des <strong>informations les plus importantes</strong> et vous
+         serez toujours au courant des <strong>discussions et actions actuelles.</strong>
+         </p>
+
+  help:
+    discuss:
+      closed_discussions:
+        hint: Tags pour créer des discussions fermées...
+        text: |
+          <p>Définir un *Tag (à commencer par UN *) permet une discussion semi publique.
+          Les utilisateurs doivent définir le même *Tag affiché dans leur profil afin de pouvoir participer
+          à la discussion, toutefois celui-ci restera visible à tout le monde et à l'extérieur du groupe.</p>
+          <p>Déterminer un **Tag (par DEUX**) permettra de fermer complètement la discussion qui ne sera
+          accessible que pour les utilisateurs munis du même **Tag comme élément défini dans leur profil.</p>
+          <p>Ceci n'est qu'une disposition provisoire permettant d'ouvrir des groupes de discussion fermées sur echo.
+          La solution définitive avec des listes de contacts, invitations et la gestion des paliers d'accès est
+          en chantier.</p>
+    profile:
+      closed_discussions:
+        hint:  Tags pour accéder à des discussions fermées...
+        text: |
+          <p>Ici vos pouvez mettre les *Tags (UN *) et les **Tags (DEUX *). Ceci vous permettra de
+          participer à des discussion transparentes, semi-publiques (munis d'un *Tags ou de voir des discussions
+          entièrement fermées grâce à votre **Tags idoïne.</p>
+          <p>Ceci n'est qu'une disposition provisoire permettant d'ouvrir des groupes de discussion fermées sur echo.
+          La solution définitive avec des listes de contacts, invitations et la gestion des paliers d'accès est
+          en chantier.</p>
+
+  # Localizations for the layout components
+  layouts:
+    tabs:
+      discuss: Discuter
+      connect: Connecter
+      act: Agir
+      my_echo: Mon echo
+      admin: Admin
+
+    outer_menu:
+      language: Langue
+      feedback: &feedback Feedback
+      about: A propos de nous
+      logout: Quitter
+      imprint: &imprint Mentions légales
+      data_privacy: &data_privacy Protection des données
+
+    discuss:
+      tabs:
+
+    connect:
+      tabs:
+        search: Découvrir le Communité
+
+    act:
+      tabs:
+
+    my_echo:
+      tabs:
+        welcome: Bienvenue
+        profile: Mon Profil
+        settings: Paramètres
+      profile_complete: "%{complete}% rempli"
+
+
+  # ------------
+  # USERS MODULE
+  # ------------
+
+  users:
+    anonym: Anonym
+    authors:
+      teaser:
+        title: 'Devenez co-auteur!'
+
+    remote_auth:
+      input_default:
+        openid: Votre URL OpenID
+    signup:
+      label: "S'inscrire"
+      member_tag: "Vous n'êtes pas encore membre ?"
+      via_echo: '... par courrier électronique'
+      via_social: '... par un compte existant'
+    setup_basic_profile:
+      title: 'Paramètres de votre profile'
+      guide: Veuillez fournir les informations indispensables pour ouvir votre account.
+      agreement: "J'ai lu et j'accepte les conditions générales."
+      use_photo: Publier sur echo
+    signin:
+      label: Se connecter
+      password: 'Mot de passe'
+      member_tag: Déjà membre?
+      via_echo: '... via echo'
+      via_social: '... via un autre compte'
+      set_password: Mot de passe oublié?
+      hello: 'Vous êtes connecté<br/><strong>%{name}</strong>'
+      hint: |
+        Pour vous connecter de nouveau sans indiquer votre mot de passe,
+        il vous suffit de vous reconnecter avec votre compte d'utilisateur sur Facebook, Twitter, séparément.
+      messages:
+        success: Votre compte a été crée avec succès. Bienvenue sur echo!
+        failed: "Utilisateur inconnu ou erreur de mot de passe."
+        failed_social: Connectez-vous avec un autre compte déjà ouvert qui vous reconnecte à echo.
+    signout:
+      messages:
+        success: "Vous vous êtes déconnecté(e).<br/>Au revoir et à bientôt!"
+    user_sessions:
+      messages:
+        session_timeout: "Votre ancienne session a été fermée. Veuillez recommencer."
+
+    # Activations section
+    activation:
+      messages:
+        success: Vous vous êtes connecté(e) avec succès. Bienvenue sur echo!
+        failed: La connexion a échoué. Veuillez vérifier vos données.
+        email_success: Votre nouvelle adresse Mail est activée!
+        already_active: Votre compte est déjà activé!
+        no_account: Ce compte est inconnu!
+        no_full_name: Veuillez indiquer votre nom et votre prénom!
+        no_agreement: Veuillez souscrire à nos conditions générales!
+
+    # Password resets section
+    password_reset:
+      step1: Demandez un nouveau mot de passe
+      step2: Indiquez un nouveau mot de passe
+      step1_text: |
+        <p>
+        Vous avez oublié votre mot de passe ou voulez vous un nouveau mot de passe?
+        </p><p>
+        C'est simple! Indiquez simplement l' adresse E-Mail, avec laquelle vous vous êtes enregistré(e).
+        Nous vous enverrons ensuite un courriel vous permettant de réinitialiser votre mot de passe.
+        </p>
+      step1_mail: Envoyer un courriel
+      step2_text: |
+        Veuillez indiquer le nouveau mot de passe avec lequel vous souhaitez vous inscrire à echo.
+      step2_ok: Indiquer un mot de passe
+      messages:
+        success: |
+          Nous vous avons envoyé un courriel vous permettant de réinitialiser votre mot de passe.
+          Veuillez regarder dans votre messagerie mail.
+        not_found: |
+          L'adresse Email est introuvable
+        reset_success: |
+          Votre nouveau mot de passe a été enregistré avec succès
+        reset_failed: |-
+          Votre mot de passe n'a pas pu être modifié. Veuillez vérifier vos indications.
+
+    # Profile Section
+    profile:
+      to: Pour le profil
+      title: Informations personnelles
+      edit_title: Etablissez votre fiche personnelle
+      guide: Vos informations personnelles ont été saisies. En cliquant sur"Editer" vous pouvez les modifier.
+
+      gender:
+        male: Masculin
+        female: Féminin
+
+      location: Lieu
+
+      password:
+        title: Changer le mot de passe
+        old: Actuel mot de passe
+        new: Nouveau mot de passe
+        confirm: Confirmer le mot de passe
+
+      picture:
+        upload_button: Remplacer
+
+      upload_picture:
+        title: Télécharger une photo
+        guide: Veuillez sélectionner une <strong>photo</strong> (JPG oder PNG, max. 5MB) et cliquer sur télécharger.
+        progress: |-
+          La photo est téléchargée. Veuillez patienter...
+
+      messages:
+        updated: "Vous avez modifié votre photo avec succès."
+
+    # Spoken Languages section
+    spoken_languages:
+      title: Connaissances de langues étrangères
+      guide: |
+        Vous pouvez fixer ici vos compétences linguistiques afin de <strong>voir le contenu seulement dans
+        les langues que vous parlez</strong>.<br/>
+        Par ailleurs, cela vous permettra de contribuer aux dialogues inter-culturels et multilangues sur echo et de
+        <strong>traduire des énoncéss</strong> entre les langues que vous maîtrisez au minimum au niveau intermédiaire.
+        Cela permettra de maintenir la qualité du fond et de la forme.<br/>
+        N'oubliez pas de préciser votre <strong>langue maternelle</strong>.
+      language: Langue
+      level: Niveau
+      error_messages:
+        repeated_instance: Cette langue a été déjà sélectionnée.
+
+
+    # Memberships section
+    memberships:
+      title: Vos activités
+      guide: |
+        Veuillez indiquer ici vos activités bénévoles, professionnelles ou autres au sein d' organisations, groupes,
+        associations, mouvements.
+      organisation: Organisation
+      position: Mon rôle
+
+    # Web profiles section
+    web_addresses:
+      title: Web Adresses
+      guide: |
+        En indiquant ici vos coordonnées, vous donnez la possibilité à d'autres utilisateurs de vous connaître
+        et à vous contacter.<br/>
+        <strong>ATTENTION</strong>: Toutes les indications données ici ne sont <strong>visibles par tous
+        les membres</strong> d'écho.
+
+      type:  Vos coordonnés
+      address: Votre
+
+    # Concernments section
+    concernments:
+      title: |
+        Secteurs d'intérêts et compétences
+      guide: |
+        Nous sommes tous concernés <strong>à différents niveaux</strong> par notre environnement et nous nous y
+        impliquons à des degrés divers. Certains problèmes nous touchent directement et nous aurions besoin d'aide
+        et du soutien localement ou d'ailleurs.Dans d'autres domaines, nous nous engageons activement en
+        proposant nos compétences. Dans certains domaines, nous avons des connaissances précises, voire d'experts,
+        dans d'autres secteurs nous représentons peut-être d'autres personnes et groupes ou nous prenons des
+        décisions qui concernent d'autres. echo met à votre disposition un outil permettant aux
+        <strong>compétences et savoirs complémentaires</strong> de se connecter, vite et facilement.<br/>
+        Comment vous définiriez <strong>votre implication et vos compétences en quelques mots-clefs</strong>?
+
+      sorts:
+        affection: <strong>Secteurs d'intérêt</strong> von
+        engagement: <strong>Impliqué</strong> dans le domaine de
+        expertise: <strong>Expert(e)</strong> dans le domaine de
+        decision_making: <strong>Décideur</strong> dans le domaine de
+      tags: Mots-clefs (Tags)
+
+    # Email notifications section
+    notifications:
+      title: Informations par courriel
+      guide: |-
+        Vous souhaitez être informé(e) par courriel? Veuillez indiquer ici le domaine d'intérêt et la
+        fréquence de l'information souhaitée.
+
+      newsletter:
+        title: Newsletter
+        guide: Vous souhaitez recevoir des informations régulières?
+        turned_on: Vous vous êtes inscrit(e) au Newsletter.
+        turned_off: Vous vous êtes désinscrit(e).
+
+      activity:
+        title: De nouvelles contributions
+        guide: Des mises à jour quotidiennes, si besoin.
+        turned_on: Votre demande d'information a été activée.
+        turned_off: Vous ne souhaitez plus être informé(e). Nous avons fait le nécessaire.
+
+      drafting:
+        title: Elaboration collaborative de texte(s)
+        guide: |
+          Vous souhaitez être informé (e) à chaque modification/développement des textes élaborés en commun ou des
+          propositions d'amélioration et si vous pouvez y ajoutez vos propres modifications.<br/><br/>
+          <strong>Attention!</strong> Si vous désactivez cette fonctionnalité, vous ratez peut-être l'occasion
+          de pouvoir y insérer vos rajouts.
+        turned_on: |
+          La demande d'information sur l'avancée du projet collaboratif a été activée.
+        turned_off: |
+          La demande d'information sur l'avancée du projet collaboratif a été désactivée.
+
+    # Permissions section
+    permissions:
+      title: Paramètres confidentiels
+      guide: Les espaces publics/privés sur echo
+      authorship:
+        title: "Identité de l'auteur du constat"
+        guide: |
+          Les autres participants enregistrés peuvent accéder á votre profil de co-auteur d'une
+          proposition dans "echo-discussion".
+        turned_on: Les informations de votre profil seront affichées avec les autres  propositions thématiques.
+        turned_off: Votre profil restera anonyme.
+
+    # Manage Echo Account section
+    echo_account:
+      title: echo compte
+      guide: Paramétrage de votre compte.
+      change_email:
+        title: Changer d' E-Mail
+        guide: |
+          Votre adresse E-Mail <strong>%{email}</strong> actuelle.<br/>
+          Vous pouvez indiquer ici une autre adresse E-mail pour rester en contact avec echo.
+        password: Votre mot de passe
+        success: Mot de passe a été changé avec succès.
+        failed: Failed to change E-Mail.
+        no_password: Entrer votre mot de passe valide pour changer votre adresse mail.
+
+      change_password:
+        title: Changer le mot de passe
+        guide: Indiquez un nouveau mot de passe.
+        success: Password changed successfully!
+        failed: Failed to change Password!
+        wrong_password: Mot de passe incorrect!
+      delete_account:
+        title: Supprimer le compte
+        password: Votre mot de passe
+        guide: |
+          <p><strong>ATTENTION!</strong></p>
+          <p>Votre compte et TOUTES vos données personnelles seront <strong> définitivement supprimées</strong>.<br/>
+          Toutes vos contributions seront tenues secrètes.</p>
+          <p>Veuillez entrer votre mot de passe et cliquer sur le bouton ci-dessous, si vous souhaitez poursuivre.</p>
+        confirm: Supprimer mon compte définitivement
+        success: Votre compte echo a été supprimé avec succès.
+    social_accounts:
+      title: Les réseaux sociaux
+      guide: Reliez vos comptes  pour partager et amplifier votre echo à travers les autres réseaux sociaux.
+      providers:
+        facebook: Facebook
+        twitter: Twitter
+        yahoo!: Yahoo!
+        linkedin: LinkedIn
+        google: Google
+      connect:
+        title: Connecter
+        success: La %{account} connection a réussi!
+        failed: La connexion avec votre %{account}compte a échoué!
+      disconnect:
+        title: Déconnecter
+        success: Votre %{account} connection a réuissi!
+        failed: Connexion avec votre %{account} échoué!
+      share:
+        title: Diffusez le message partout
+        guide: Faites en l´echo dans vos réseaux sociaux.
+        text: Message
+        data_privacy:
+          title: Data Privacy Notice
+          description: Mind the privacy policy of other networks before sharing your views on them...
+        preview: Aperçu
+        submit: Envoyer votre echo
+        error: Le partage n'a pas réuissi. Veillez vérifier votre connection.
+        success: |
+          Envoyé un echo sur %{accounts}.
+        failed: |
+          Le partage a échoué sur %{accounts}.
+        timeout: |
+          Le délai de connection avec %{accounts} a expiré!
+        enabled: "On"
+        disabled: "Off"
+
+    # New Users section
+    users:
+      new:
+        title: 'Votre echo'
+        subtitle: 'Joindre echo'
+        text: |
+          <p>
+          <strong>echo est la démocratie à visage humain façonnée par des hommes et des femmes.</strong>
+          </p><p>
+          Participez - adhérez maintenant!
+          </p>
+        action: 'Adhérez maintenant!'
+
+      messages:
+        created: |-
+          Retournez à votre messagerie mail. Nous vous avons envoyé un mail de confirmation.
+          Cliquez sur le lien pour activer votre compte.
+        activate_email: Pour compléter votre adresse mail, veuillez vous déconnecter. Une confirmation vous parveniendra à votre nouvelle adresse mail.
+
+    # Reports section
+    reports:
+      new:
+        title: Signaler un abus
+        text: |
+          <p>Vous souhaitez nous signaler un contenu <strong>humiliant, offensant, voire immoral</strong>?<br/>
+          Veuillez préciser l'utilisateur ou le site.
+          </p><p>
+          Nous allons donner suite à votre information au plus vite.
+          </p>
+      messages:
+        created: "Merci de votre information. Nous allons donner suite à votre avis et nous vous tiendrons au courant."
+
+
+  # ---------------
+  # Discuss section
+  # ---------------
+
+  discuss:
+    my_questions:
+      link: Mes Questions
+      title: Mes nouvelles questions et discussions
+      no_questions: |
+        Vous n'avez pas encore précisé un sujet de discussion. Pour ce faire,
+        cliquez sur le point d'interrogation à gauche.
+      add: Nouvelle question
+    original_language_warning: |
+      La formulaton originale est en  <strong>%{language}</strong>.<br/>
+      Précisez vos compétences linguistiques pour accéder à d'autres pages.
+    translation_request: Veuillez traduire la formulation en <strong>Français</strong>.
+    mixed_languages: Le brassage des langues
+    set_languages: Définissez vos <strong>COMPETENCES LINGUISTIQUES</strong> - Affirmez votre voix!
+    no_locale_language: Parlez-vous FRANÇAIS?
+    adjust_languages: Définissez vos <strong>Compétences en FRANÇAIS</strong>!
+    results_count:
+      one: '%{count} question'
+      more: '%{count} questions'
+    for: |-
+      pour '%{value}'
+    featured_topics:
+      title: Thèmes Proposés
+      tabs:
+        echo:
+          title: A propos d'echo
+        pilot_projects:
+          title: Projets-pilotes
+    search:
+      title: Chercher
+      in: '... dans %{category} ...'
+      add: "Créer la première question à ce sujet"
+      placeholder: "Topic et/ou terme pertinent recherché"
+
+    tooltips:
+      read_question: 'Regarder cette question'
+      read_proposal: 'Lire cette proposition'
+      read_improvement: "Lire l'rajout"
+      read_pro_argument: 'Lire cet argument PRO'
+      read_contra_argument: 'Lire cet argument CONTRE'
+      read_follow_up_question: 'Lire cette question suivie"'
+      current_question: 'La question actuellement affichée'
+      current_proposal: 'La proposition actuellement affichée '
+      current_improvement: "Le rajout affiché"
+      current_pro_argument: "L'argument PRO actuellement publié"
+      current_contra_argument: "L'argument CONTRE actuellement publié"
+      current_background_info: 'The currently displayed background info'
+      current_follow_up_question: "L'actuelle question suivie publiée"
+      back_to_question: 'Retour à la question actuelle'
+      back_to_proposal: 'Retour à la proposition actuelle'
+      back_to_improvement: "Retour au rajout"
+      prev_question: 'Lire la question précédente dans le contexte affiché ci-dessus'
+      next_question: 'Lire la question suivante dans le contexte affiché ci-dessus'
+      prev_proposal: 'Lire la proposition précédente à la question actuelle'
+      next_proposal: 'Lire la proposition suivante à la question actuelle'
+      prev_improvement: "Lire le rajout précédent à la proposition actuelle"
+      next_improvement: "Lire le rajout suivant à la proposition actuelle"
+      prev_pro_argument: "Lire l'argument précédent de la proposition actuellel"
+      next_pro_argument: "Lire l'argument suivant de la proposition actuelle"
+      prev_contra_argument: "Lire l'argument antérieur concernant la proposition actuelle"
+      next_contra_argument: "Lire l'argument au sujet de la proposition actuelle"
+      prev_background_info: 'See previous background info for the current statement'
+      next_background_info: 'See next background info for the current statement'
+      prev_follow_up_question: 'Lire la question suivie précédente dans le contexte affiché ci-dessus'
+      next_follow_up_question: 'Lire laprochaine "question suivie" dans le contexte affiché ci-dessus'
+      create_question: 'Poser une nouvelle question'
+      create_proposal: |
+        Vous avez une nouvelle idée concernant la question actuelle? Veuillez l'indiquer ici
+      create_improvement: |
+        Vous avez une idée concernant la proposition actuelle? Veuillez l'indiquer ici!
+      create_pro_argument: 'Envoyer un nouvel argument PRO concernant cette proposition'
+      create_contra_argument: 'Envoyer un nouvel argument CONTRE concernant cette proposition'
+      create_alternative: 'Post a new opposition to this statement'
+      create_background_info: 'Recommend a new piece of background information related to this statement'
+      create_follow_up_question: 'Envoyer une question suivie soulevée par le constat actuel'
+      echo: |
+        Apportez votre 'echo' à cette proposition!
+      unecho: 'Si vous ne souhaitez plus soutenir cette proposition, vous pouvez vous désister ici!'
+      publish: |
+        Vous souhaitez rendre cette question publique?
+        (Toute modification ultérieure est impossible.)
+      incorporate: |
+        Cliquez ici afin 'insérer' la proposition complémentaire dans le texte ci-dessus.
+      siblings:
+        question: Regarder toutes les questions posées dans le contexte ci-dessus
+        proposal: Regarder toutes les propositions concernant la question actuelle
+        improvement: "Regarder tous les rajouts proposés concernant l'actuelle proposition"
+        pro_argument: "Regarder tous les arguments concernant l'actuelle proposition"
+        contra_argument: "Regarder tous les arguments concernant l'actuelle proposition"
+        background_info: See all background infos belonging to the current statement
+      link_statement: |-
+        Enter a part of the title or paste in the URL of a statement.
+        Afterwards press this button to reuse the statement in the current context.
+      unlink_statement: "Click the button again to unlink the statement."
+
+    statements:
+      label: 'Voter'
+      echo_link: 'Soutenir cet (echo)'
+      unecho_link: 'Retirer votre vote'
+      echo_indicator:
+        one: '1 supporter'
+        other: '%{count} supporters'
+
+      add_new: Nouvelle déclaration
+      embed_button: Intégrer
+      embed_search_title: Intégrer résultats de recherche
+      embed_search_hint: |-
+        Copiez et collez le code ci-dessous pour l'intégrer ces résultats de recherche dans
+        VOTRE page web et créez un echo dans votre communauté.
+      embed_statement_title: Intégrer contribution
+      embed_statement_hint: |-
+        Copiez et collez le code ci-dessous pour l'intégrer dans VOTRE page web et créez un echo dans votre communauté.
+      copy_url: Link to
+      copy_url_title: Link to statement
+      copy_url_hint: 'Copy the link to this statement and use it to spread the word via your favorite channels.'
+
+      create_question_link: 'Poser une nouvelle question'
+      create_proposal_link: 'Soumettre de nouvelles propositions'
+      create_internal_link: 'Une idée nouvelle'
+      create_improvement_link: 'Soumettre un rajout'
+      create_pro_argument_link: Ajouter un nouvel argument PRO
+      create_contra_argument_link: Ajouter un nouvel argument CONTRE
+      create_alternative_link: Add new opposition
+      create_background_info_link: Add new background info
+      create_follow_up_question_link: Ajouter une nouvelle question suivie
+      preview_embedded_content: Aperçu
+      open_embedded_content: Ouvrir une nouvelle fenêtre
+
+      statement_language_hint: |
+        Veuillez préciser vos connaissances linguistiques et votre niveau respectif dans <a href='%{url}'>profil</a>.
+      statement_language_hint_tooltip: |
+        Vous pouvez alors vous exprimer dans toutes les langues que vous maîtrisez à partir du degré moyen.
+      drafting_language_hint: |
+        La poursuite collaborative ne sera possibile que dans la langue sélectionnée!
+      fuq_formulation_hint: |
+        La "question suivie" apparaissant aussi comme question dans le registre "Chercher",
+        son titre et sa description doivent etre clairs et compréhensibles indépendemment de la discusion d'origine.
+      tag_permission: |
+        Ce tag '%{tag}' n'est pas autorisé.
+      read_permission: |
+        Vous n'êtes pas autorisé(e) à lire ces contributions.
+      title_hint:
+        question: Entrez le titre de la question en... Français?
+        proposal: Entrer le titre de votre proposition en... Français?
+        improvement: "Entrer le titre du rajout en... Français?"
+        pro_argument: |
+          Entrer le titre de l'argument PRO en... Français?
+        contra_argument: |
+          Entrer le titre de l'argument CONTRE en... Français?
+        background_info: Enter the background info title in... French?
+        follow_up_question: Entrer le titre de la question de suivi en... Français?
+      text_hint:
+        alternative_prefix: |
+          OPPOSITIONS are mutually exclusive to the original statement and all its other alternatives.<br/><br/>
+        question: Veuillez décrire la thématique et donnez quelques détails...
+        proposal: Veuillez fournir davantage de détails sur votre proposition...
+        improvement: Veuillez décrire votre idée d'amélioration avec plus de détails...
+        pro_argument: Veuillez donner davantage de détails de votre argument PRO...
+        contra_argument: Veuillez donner davantage de détails de votre argument CONTRE...
+        background_info: |
+          Please describe the recommended background information shortly and tell why you
+          think it is interesting in this context...
+        follow_up_question: Veuillez donner davantage de détails de votre question suivie...
+      tag_hint: 'Mots-clefs (Tags) idoines...'
+      info_url_hint: 'Enter the link to the external content'
+
+      publish: Publier
+      published: La discussion a été publiée avec succès.
+      edit: '%{type} poursuivre'
+
+      types:
+        question: 'Question'
+        proposal: 'Proposition'
+        improvement: 'Rajout'
+        pro_argument: 'Argument PRO'
+        contra_argument: 'Argument CONTRE'
+        alternative: 'Opposition'
+        background_info: 'Background Info'
+        follow_up_question: 'Question suivie'
+      new:
+        question:  'Nouvelle question'
+        proposal:  'Nouvelle proposition'
+        improvement: 'Nouveau rajout'
+        pro_argument: 'Nouvel argument PRO'
+        contra_argument: 'Nouvel argument CONTRE'
+        background_info: 'New Background Info'
+        follow_up_question: 'Nouvelle question suivie'
+      headings:
+        question: 'Questions'
+        proposal: 'Propositions'
+        improvement: 'Rajouts'
+        argument: 'Pro & Contre'
+        alternatives: 'Alternatives'
+        background_info: 'Background Infos'
+        follow_up_question: 'Questions suivie'
+      sibling_labels:
+        question: 'Questions'
+        proposal: 'Propositions'
+        improvement: 'Rajouts'
+        argument: 'Arguments'
+        background_info: 'Backgrounds'
+        follow_up_question: 'Questions'
+      siblings:
+        background_info: 'Background Infos'
+        follow_up_question: 'Question suivie dans le contexte affiché ci-dessus'
+
+      topic: Thème (Tags / mots-clefs)
+      states:
+        label: 'Publier la discussion immédiatement?'
+        initial_state:
+          new: |
+            Poursuivre l'ébauche et publier plus tard
+          published: |
+            Publier immédiatement (une publication ultérieure sera restreinte)
+        published: Publier
+        approved: D'accord
+      delete_link: 'Effacer'
+      delete_confirmation: 'Vous voulez vraiment effacer ce message?'
+      read_only_permission: |-
+        Cette discussion est déjà fermée, mais vous pouvez lire les contributions.
+      unsupported_parent: |-
+        Les rajouts ne sont soutenus que si la projet initial a été approuvé.
+        Ce rajout ne peut plus être pris en considération. Nous sommes désolés.
+      see_parent_if_approved: |-
+        Ce rajout a été accepté afin d'améliorer la proposition ci-dessous.
+      see_parent_if_incorporated: |-
+        Ce rajout a déjà été intégré au projet.
+      being_edited: |-
+        Cette proposition est à l'étude actuellement. Veuillez recommencer ultérieurement.
+      already_translated: |-
+        %{type} vient d'être traduite par une autre personne.
+      statement_updated: |-
+        %{type} vient d'être actualisée par une autre personne.
+      statement_supported: |-
+        Vous avez crée un echo %{type} avec succès.
+      statement_unsupported: |-
+        Vous avez retiré votre echo %{type} avec succès.
+      edit_period_hint: |-
+        Vous avez <strong>%{minutes} minutes</strong> pour rédiger vos suggestions ou vos commentaires.
+        Après expiration de ce délai, vos corrections ne pourront probablement plus être prises en considération.
+      staled_modification: Désolé, mais le délai de 60 minutes maximum est terminé. Entretemps, la proposition a été traitée par un autre utilisateur. Votre rajout ne peut pas être pris en compte.
+      no_document_in_language: "Le constat n'existe pas dans votre langue."
+      supporter_to_share: Vous devez approuver ce point de vue pour le partager.
+      published_to_share: 'La contribution est en cours de transmission. Pendant la transmission vous ne pouvez pas la partager.'
+      cannot_be_edited: |
+        Dommage, vous ne pouvez pas éditer ce constat après que les autres membres l'aient approuvé.
+        Cette disposition évitera aussi des piratages éventuels.
+      cannot_be_linked: Désolé, cette contribution ne peut pas être reliée au context présent.
+      echos_label: Support
+
+      linking:
+        disabled: Link
+        enabled: Linked
+
+      breadcrumbs:
+        discuss_search: Chercher des résultats
+        my_questions: Mes questions
+        labels:
+          ds: ''
+          mi: ''
+          sr: 'Chercher des résultats pour'
+          pr: 'Proposals for'
+          im: 'Additions for'
+          ar: 'Arguments for'
+          bi: 'Background Infos for'
+          fq: 'Questions suivies pour'
+          jp: 'Following link in'
+          over:
+            ds: 'Retour à'
+            mi: 'Retour à'
+            sr: 'Retour à chercher des résultats pour'
+            pr: 'Retour à'
+            im: 'Retour à'
+            ar: 'Retour à'
+            bi: 'Retour à'
+            jp: 'Retour à'
+            fq: 'Retour à'
+
+      upload_image:
+        title: |
+          Télécharger l'image
+        guide: |
+          Veuillez choisir une image <strong>pour illustrer votre projet</strong> (JPG or PNG, max. 5MB)
+          et téléchargez la ensuite.
+        progress: |
+          L'image a été téléchargée. Veuillez patienter un instant...
+        error: |-
+          Le téléchargement a échoué. Veuillez seulement utiliser JPG oder PNG avec 5MB max..
+
+      add_teaser:
+        question: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>Quelle serait la votre?<br/><br/>
+          Cliquez sur le bouton ci-dessus pour la soumettre MAINTENANT!
+        proposal: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>Avez vous une proposition à faire?<br/><br/>
+          Cliquez sur le bouton ci-dessus pour la soumettre MAINTENANT!
+        improvement: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>La proposition pourrait etre améliorée?<br/><br/>
+          Cliquez sur le bouton ci-dessus et entrez votre rajout MAINTENANT!
+        pro_argument: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>Quel serait votre argument PRO?<br/><br/>
+          Cliquez sur le bouton ci-dessus pour entrer votre argument pro MAINTENANT!
+        contra_argument: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>Quel serait votre argument CONTRE?<br/><br/>
+          Cliquez sur le bouton ci-dessus pour entrer votre argument contre MAINTENANT!
+        background_info: |
+          This is where a new background info related to the current statement could appear.<br/><br/>
+          Would you like to recommend one?<br/><br/>
+          Press the button above to enter it NOW!
+        follow_up_question: |
+          Voici le rang qu'aurait votre idée gagnante.<br/><br/>En avez vous une question suivie?<br/><br/>
+          Cliquez sur le bouton ci-dessus pour la soumettre MAINTENANT!
+
+    summary:
+      title: 'Résumé'
+    messages:
+      created: "%{type} a été établi avec succès."
+      updated: "%{type} a été traité avec succès."
+      deleted: "%{type} a été effacé avec succès."
+      translated: "%{type} a été traduit avec succès."
+      incorporated: "Le rajout a été intégré au projet avec succès."
+      image_uploaded: "L'image a été ajoutée à/ %{type}"
+      new_percentage: "Votre profil est maintenant complet à %{percentage}%."
+
+
+  # ---------------
+  # Connect section
+  # ---------------
+
+  connect:
+    fill_out_profile:
+      text: |-
+        Veuillez établir votre profil <strong>au moins à %{percentage}%</strong> pour "faire plaisir à notre logiciel"
+        et pour faire disparaître cette partie.
+      name: 'Mon profil'
+      description: |
+        Complétez votre profil afin de vous présenter à la communité d'echo.
+    placeholder: 'Topic, emplacement ou organisation recherché'
+
+    segments:
+      all: Tous
+      affection: 'Concernés'
+      engagement: 'Engagés'
+      expertise: 'Experts'
+      decision_making: 'Décideurs'
+    results_count:
+      all:
+        no_filter:
+          one: 'personne'
+          more: 'les gens'
+        with_filter:
+          one: "personne en rapport avec '%{filter}'"
+          more: "les gens en rapport avec '%{filter}'"
+      affection:
+        no_filter:
+          one: personne concernée
+          more: les gens concernés
+        with_filter:
+          one: "personne concernée '%{filter}'"
+          more: "les gens concernés par '%{filter}'"
+      engagement:
+        no_filter:
+          one: personne impliquée
+          more: les gens impliqués
+        with_filter:
+          one: "personne impliquée dans '%{filter}'"
+          more: "les gens impliqués dans '%{filter}'"
+      expertise:
+        no_filter:
+          one: expert
+          more: experts
+        with_filter:
+          one: "expert en '%{filter}'"
+          more: "experts en '%{filter}'"
+      decision_making:
+        no_filter:
+          one: décideur
+          more: les décideurs
+        with_filter:
+          one: "décideur dans '%{filter}'"
+          more: "les décideurs dans '%{filter}'"
+    details:
+      tabs:
+        overview:  'Aperçu'
+        concernments: 'Compétences'
+        web_addresses: 'Votre @ ou votre site'
+      actions:
+        send_mail: "Send Message"
+        report: 'Signaler'
+    messages:
+      empty: |
+        Votre demande n'a pas pu aboutir. Veuillez recommencer avec un autre mot-clef.
+      no_concernments: |
+        Cet adhérent n'a pas encore indiqué ses domaines d'intérêt et ses compétences.
+      no_web_addresses: |
+        Cet adhérent n'a pas encore indiqué son adresse.
+
+  # Feedback resources
+  feedback:
+    new:
+      title: Feedback
+      welcome: |
+        <p>
+        <strong>Votre opinion nous importe!</strong><br/>
+        </p><p>
+        Vous avez des questions ou des suggestions? Vous souhaitez formuler une critique, attirer notre attention sur
+        un problème important ou vous voulez simplement nous féliciter? Nous en serions ravis et très attentifs à vos propos!
+        </p>
+      message: Message
+      send: Envoyer le message
+    create:
+      thank_you: Merci de votre message.
+
+  user_mail:
+    new:
+      title: Send Mail
+      guide: Here you can send an E-Mail to contact the selected echo member.
+      subject: Subject
+      text: Message
+    create:
+      thank_you: |-
+        Votre message a été envoyé avec succès.
+
+  # Model resources
+  activerecord:
+    errors:
+      models:
+        feedback:
+          attributes:
+            blank: 'Veuillez remplir toutes les cases.'
+            email:
+              invalid: "Votre adresse n'est pas exacte. Veuillez recommencer."
+        newsletter:
+          attributes:
+            blank: 'Remplissez les cases rescpectives.'
+            email:
+              invalid: Vous vous êtes trompé (e) en inscrivant votre adresse. Veuillez recommencer. Merci.
+        user:
+          attributes:
+            email:
+              taken: "L'adresse indiquée est déjà utilisée."
+              invalid: "Entrez une adresse mail validée."
+            password:
+              invalid: 'Wrong password.'
+        social_identifier:
+          taken: 'Ce compte est déjà utilisé.'
+
+      messages:
+        blank: "La case '%{attribute}' doit être remplie."
+        taken: 'Votre définition préférée est déjà utilisée.'
+        too_short: "Le texte dans la case '%{attribute}' est trop court."
+        too_long: "Le texte dans la case '%{attribute}' est trop long."
+        invalid: "Vos indications '%{attribute}' n'ont pas le bon format."
+        confirmation: '%{attribute} doivent être identique'
+        access_denied: "Vous ne pouvez pas aller plus loin. Essayez plus tard"
+
+      template:
+        header:
+          one: "Une des cases n'a pas été remplie correctement."
+          other: "%{count} les cases n'ont pas été remplies correctement."
+        body: "Veuillez vérifier les indications fournies."
+
+    attributes:
+      profile:
+        email: E-Mail
+        full_name: Nom
+        gender: Sexe
+        city: Ville
+        country: Pays
+        location: Lieu
+        about_me: Quelques renseignements sur vous
+        motivation: "Que pensez-vous d'echo?"
+        memberships: Activités
+        spoken_languages: Vos connaissances linguistiques
+      report:
+        reason: 'Motif'
+      web_address:
+        location: 'Votre adresse sur le web'
+      membership:
+        position: 'Mon rôle'
+      feedback:
+        message: Message
+      statement_node: Image fichier
+      statement:
+        info_type_id: 'Content Type'
+      statement_data:
+        info_url: 'Background Info Link'
+      statement_document:
+        language_id: 'Langue'
+        language: 'Langue'
+        title: 'Titre'
+        text: 'Résumé'
+        image: 'Illustration'
+      about_item:
+        photo: 'Photo'
+        name: 'Nom'
+        responsibility: 'Responsabilité'
+        description: 'Description'
+        about_category_id: 'Qui sommes-nous?'
+        index: 'Index'
+
+    models:
+      question: "question"
+      proposal: "proposition"
+      improvement: "rajout"
+      pro_argument: 'argument PRO'
+      contra_argument: 'argument CONTRE'
+      follow_up_question: 'question suivie'
+
+  authlogic:
+    error_messages:
+      email_invalid: "Veuillez corrigez l'adresse mail erronnée."
+      password_blank: "Veuillez indiquer votre mot de passe."
+      not_active: "Votre compte na pas été activé. Vérifiez dans votre messagerie."
+      must_be_logged_in: "Connectez-vous. Merci."
+      must_be_logged_out: " Veuillez vous déconnecter."
+
+    attributes:
+      user_session:
+        email: 'E-Mail'
+        password: 'Mot de passe'
+
+
+  # Date and time formatting
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
+      month_name: "%B"
+      day_name: "%a"
+
+    day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+    abbr_day_names: [Di, Lu, Ma, Mer, Jeu, Ven, Sam]
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+    abbr_month_names: [~, Jan, Fev, Mars, Apr, Mai, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+#    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      default: "%a, %d. %B %Y"
+      short: "%e. %B, %H:%M Uhr"
+      long: "%A, %e. %B %Y, %H:%M heure"
+      time: "%H:%M"
+
+    am: matinée
+    pm: après-midi
+
+  datetime:
+    distance_in_words:
+      half_a_minute: '30 secondes'
+      less_than_x_seconds:
+        zero: "moins d' 1 seconde"
+        one: "moins d' 1 seconde"
+        other: "moins d' %{count} seconde"
+      x_seconds:
+        one: '1 seconde'
+        other: '%{count} secondes'
+      less_than_x_minutes:
+        zero: "moins d'une minute"
+        one: "moins d'une minute"
+        other: 'moins de %{count} minutes'
+      x_minutes:
+        one: '1 minute'
+        other: '%{count} minutes'
+      about_x_hours:
+        one: 'environ 1 heure'
+        other: 'environ %{count} heures'
+      x_days:
+        one: '1 jour'
+        other: '%{count} jours'
+      about_x_months:
+        one: 'environ 1 mois'
+        other: 'environ %{count} mois'
+      x_months:
+        one: '1 mois'
+        other: '%{count} mois'
+      about_x_years:
+        one: 'environ 1 an'
+        other: 'environ %{count} ans'
+      over_x_years:
+        one: "plus d'un an"
+        other: 'plus de %{count} ans'
+    prompts:
+      second: "secondes"
+      minute: "minutes"
+      hour: "heures"
+      day: "jour"
+      month: "mois"
+      year: "annés"
+
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: '€'
+        format: '%n%u'
+        separator:
+        delimiter:
+        precision:
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+  newsletters:
+    send_confirmation: Are you sure?
