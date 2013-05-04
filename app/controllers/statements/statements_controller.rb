@@ -3,30 +3,30 @@ class Statements::StatementsController < ApplicationController
 
   before_filter :authenticate_user!, except: [:index, :show]
 
+
+  before_filter :fetch_statement, only: [:show, :edit, :update, :destroy]
+  before_filter :new_statement, only: [:new, :create]
+
   def index
 
   end
 
   def show
-    @statement = fetch_statement
     @document = @statement.node.current_document
     render
   end
 
   def new
-    @statement = new_statement
     @document = @statement.node.new_document
     render
   end
 
   def edit
-    @statement = fetch_statement
     @document = @statement.node.new_document
     render
   end
 
   def create
-    @statement = new_statement
     @statement.assign_attributes(params[:statement])
     # set document author
     @statement.node.documents.each{|d| d.author = current_user }
@@ -35,7 +35,6 @@ class Statements::StatementsController < ApplicationController
   end
 
   def update
-    @statement = fetch_statement
     @statement.assign_attributes(params[:statement])
     @document = @statement.node.documents.last
     if @document.new_record?
@@ -48,7 +47,6 @@ class Statements::StatementsController < ApplicationController
   end
 
   def destroy
-    @statement = fetch_statement
     @statement.destroy
     flash[:notice] = I18n.t("discuss.messages.deleted", type: @statement.class.model_name.human) if @statement.destroyed?
     respond_with(@statement)
