@@ -9,12 +9,19 @@ class Statements::StatementsController < ApplicationController
 
   def show
     @statement = fetch_statement
+    @document = @statement.node.current_document
     render
   end
 
   def new
     @statement = new_statement
-    @document = @statement.node.documents.build
+    @document = @statement.node.new_document
+    render
+  end
+
+  def edit
+    @statement = fetch_statement
+    @document = @statement.node.new_document
     render
   end
 
@@ -23,8 +30,20 @@ class Statements::StatementsController < ApplicationController
     @statement.assign_attributes(params[:statement])
     # set document author
     @statement.node.documents.each{|d| d.author = current_user }
-    @statement.save
-    flash[:notice] = I18n.t("discuss.messages.created", type: @statement.class.model_name.human) if @statement.persisted?
+    flash[:notice] = I18n.t("discuss.messages.created", type: @statement.class.model_name.human) if @statement.save
+    respond_with(@statement)
+  end
+
+  def update
+    @statement = fetch_statement
+    @statement.assign_attributes(params[:statement])
+    @document = @statement.node.documents.last
+    if @document.new_record?
+      @document.author = current_user
+    else
+      @document = @statement.node.current_document
+    end
+    flash[:notice] = I18n.t("discuss.messages.updated", type: @statement.class.model_name.human) if @statement.save
     respond_with(@statement)
   end
 

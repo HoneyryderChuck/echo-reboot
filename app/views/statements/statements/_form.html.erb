@@ -20,7 +20,6 @@
             <%= doc_f.input :language_code,
                              as: :select,
                              collection: languages_by_proficiency(current_user, :intermediate).map{|l| [l.i18n_value, l.code] },
-                             selected: I18n.locale,
                              include_blank: false %>
           <% end %>
         <% end %>

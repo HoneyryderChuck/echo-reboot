@@ -28,6 +28,10 @@ class Node < ActiveRecord::Base
 
 
   # documents
+  def new_document(locale=I18n.locale)
+    doc = current_document(locale)
+    doc.nil? ? documents.build(language_code: locale) : doc.dup
+  end
   def current_documents
     @current_documents ||= documents.where(current: true)
   end

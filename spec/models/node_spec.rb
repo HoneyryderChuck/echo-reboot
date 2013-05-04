@@ -47,6 +47,29 @@ describe Node do
 
   describe "document methods" do
     let(:scope) { mock(:scope) }
+    describe "#new_document" do
+      before{ I18n.stub! :locale => :bang }
+      let(:document) { mock(:document) }
+      let(:new_document) { mock(:new_document) }
+      describe "when there is a current document" do
+        before do
+          subject.should_receive(:current_document).with(:bang).and_return(document)
+          document.should_receive(:dup).and_return(new_document)
+        end
+        it "should duplicate it to a new instance" do
+          subject.new_document.should be(new_document)
+        end
+      end
+      describe "when there is no current document" do
+        before do
+          subject.should_receive(:current_document).with(:bang).and_return(nil)
+        end
+        it "should create an empty document" do
+          subject.documents.should_receive(:build).and_return(new_document)
+          subject.new_document.should be(new_document)
+        end
+      end
+    end
     describe "#current_documents" do
       it "should scope by current" do
         scope.should_receive(:where).with(current: true)
