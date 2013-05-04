@@ -47,4 +47,11 @@ class Statements::StatementsController < ApplicationController
     respond_with(@statement)
   end
 
+  def destroy
+    @statement = fetch_statement
+    @statement.destroy
+    flash[:notice] = I18n.t("discuss.messages.deleted", type: @statement.class.model_name.human) if @statement.destroyed?
+    respond_with(@statement)
+  end
+
 end

@@ -148,5 +148,28 @@ describe Statements::QuestionsController do
     end
   end
 
+  describe "destroy" do
+    before { sign_in(user) }
+    subject { create(:question) }
+    let(:question) { assigns(:statement) }
+    it "should load the needed question" do
+      delete :destroy, id: subject.id
+      question.id.should be(subject.id)
+    end
+    it "should remove the question" do
+      subject # eager loading for the counter to be activated
+      expect {
+        delete :destroy, id: subject.id
+      }.to change(Question, :count).by(-1)
+    end
+    describe "html" do
+      it "should redirect to index" do
+        delete :destroy, id: subject.id
+        flash.now[:notice].should be_present
+        response.should redirect_to(questions_url)
+      end
+    end
+  end
+
 
 end
