@@ -100,4 +100,25 @@ describe Node do
       end
     end
   end
+
+  describe "scopes" do
+    let(:user1) { create(:user) }
+    let(:user2) { create(:user) }
+    let(:user3) { create(:user) }
+    before(:all) do
+      @node = create(:node, documents: [ create(:document, language_code: "en", author: user1),
+                                         create(:document, language_code: "de", author: user2),
+                                         create(:document, language_code: "es", author: user3) ])
+    end
+    after(:all) do
+      DatabaseCleaner.clean
+    end
+    describe ".authors_by_language" do
+      it "should only deliver the authors by document language" do
+        @node.authors.by_language(:en).should == [user1]
+        @node.authors.by_language(:de).should == [user2]
+        @node.authors.by_language(:es).should == [user3]
+      end
+    end
+  end
 end
