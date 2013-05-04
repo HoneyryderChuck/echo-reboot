@@ -6,6 +6,9 @@ class Statements::StatementsController < ApplicationController
 
   before_filter :fetch_statement, only: [:show, :edit, :update, :destroy]
   before_filter :new_statement, only: [:new, :create]
+  before_filter :read_permission, only: [:show]
+  before_filter :write_permission, only: [:edit, :update, :destroy]
+
 
   def index
 
@@ -50,6 +53,18 @@ class Statements::StatementsController < ApplicationController
     @statement.destroy
     flash[:notice] = I18n.t("discuss.messages.deleted", type: @statement.class.model_name.human) if @statement.destroyed?
     respond_with(@statement)
+  end
+
+  private
+
+  def read_permission
+    return true if @statement.node.published?
+    write_permission
+  end
+
+  def write_permission
+    return false unless current_user.present? and  @statement.node.authors.by_language.include?(current_user)
+    return true
   end
 
 end

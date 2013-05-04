@@ -13,4 +13,5 @@ class Statements::QuestionsController < Statements::StatementsController
   def question_params
     params.require(:statement).permit(node: [:topics, :editorial_state_code, document: [:title, :text, :language_code]])
   end
+
 end
