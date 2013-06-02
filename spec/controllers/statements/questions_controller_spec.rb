@@ -4,7 +4,7 @@ require "spec_helper"
 describe Statements::QuestionsController do
   let(:user) { build_stubbed(:user) }
   before(:each) do
-    controller.class.skip_before_filter :set_locale, :read_permission, :write_permission
+    controller.class.skip_before_filter :set_locale, :read_permission, :write_permission, :acquire_lock
     controller.stub! :authenticate_user! => true, :current_user => user
   end
 

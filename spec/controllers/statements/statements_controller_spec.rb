@@ -65,5 +65,25 @@ describe Statements::StatementsController do
         end
       end
     end
+
+    describe "#acquire_lock" do
+      let(:document) { mock(:document, :locked_for? => false) }
+      before do
+        controller.instance_variable_set("@document", document)
+      end
+      describe "when the document is already_locked" do
+        before do
+          document.should_receive(:locked_for?).with(controller.current_user).and_return(true)
+        end
+        it "should redirect to the last page" do
+          controller.should_receive(:redirect_to).with(:back)
+          controller.send(:acquire_lock)
+        end
+      end
+      it "should lock the document for the current user" do
+        document.should_receive(:lock!).with(controller.current_user)
+        controller.send(:acquire_lock)
+      end
+    end
   end
 end

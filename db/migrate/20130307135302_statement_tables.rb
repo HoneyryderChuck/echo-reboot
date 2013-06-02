@@ -56,7 +56,7 @@ class StatementTables < ActiveRecord::Migration
       t.references    :author, null: false
       t.references    :previous_document
       t.references    :incorporated_statement, polymorphic: true
-      t.integer       :locked_by
+      t.integer       :locked_user_id
       t.datetime      :locked_at
       t.boolean       :current
     end

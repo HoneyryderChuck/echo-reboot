@@ -8,14 +8,14 @@ class Statements::StatementsController < ApplicationController
   before_filter :new_statement, only: [:new, :create]
   before_filter :read_permission, only: [:show]
   before_filter :write_permission, only: [:edit, :update, :destroy]
+  before_filter :fetch_document, only: [:show, :edit, :update]
+  before_filter :acquire_lock, only: [:edit]
 
 
   def index
-
   end
 
   def show
-    @document = @statement.node.current_document
     render
   end
 
@@ -25,7 +25,6 @@ class Statements::StatementsController < ApplicationController
   end
 
   def edit
-    @document = @statement.node.new_document
     render
   end
 
@@ -63,8 +62,24 @@ class Statements::StatementsController < ApplicationController
   end
 
   def write_permission
-    return false unless current_user.present? and  @statement.node.authors.by_language.include?(current_user)
+    return false unless current_user.present? and @statement.node.authors.by_language.include?(current_user)
     return true
   end
+
+  def fetch_document
+    @document = @statement.node.current_document
+  end
+
+  def acquire_lock
+    if @document.locked_for?(current_user)
+      flash[:error] = I18n.t("discuss.statements.being_edited")
+      redirect_to(:back)
+    else
+      @document.lock!(current_user)
+    end
+
+
+  end
+
 
 end

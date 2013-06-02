@@ -4,7 +4,7 @@ class Document < ActiveRecord::Base
   belongs_to :author, class_name: "User"
   belongs_to :previous_document, class_name: 'Document'
   belongs_to :incorporated_statement, polymorphic: true
-  belongs_to :locked_by, class_name: "User", foreign_key: 'locked_by'
+  belongs_to :locked_user, class_name: "User"
 
   has_enumerated :language
   has_enumerated :action, class_name: 'StatementAction'
@@ -27,23 +27,25 @@ class Document < ActiveRecord::Base
 
 
   # Document locking mechanisms
-  def valid_lock_period
-    1.hours
-  end
+  def valid_lock_period ; 1.hours ; end
   private :valid_lock_period
 
-  def locked?(user)
-    locked_by.present? and !locked_by.eql?(user) and locked_at >= 1.hours.ago
+  def locked?
+    locked_user.present? and locked_at? and locked_at >= 1.hours.ago
+  end
+
+  def locked_for?(user)
+    locked? and not locked_user.eql?(user)
   end
 
   def lock!(user)
-    self.locked_by = user
+    self.locked_user = user
     self.locked_at = Time.now
     save
   end
 
   def unlock!
-    self.locked_by = nil
+    self.locked_user = nil
     self.locked_at = nil
     save
   end

@@ -7,7 +7,7 @@ describe Document do
     it { should belong_to(:author) }
     it { should belong_to(:previous_document) }
     it { should belong_to(:incorporated_statement) }
-    it { should belong_to(:locked_by) }
+    it { should belong_to(:locked_user) }
   end
 
   describe "validations" do
@@ -105,7 +105,7 @@ end
     describe "#lock!" do
       let(:user) { mock(:user) }
       it "should persist the locking changes" do
-        subject.should_receive(:locked_by=).with(user)
+        subject.should_receive(:locked_user=).with(user)
         subject.should_receive(:locked_at=).with(instance_of(Time))
         subject.should_receive(:save)
       end
@@ -113,32 +113,32 @@ end
     end
     describe "#unlock!" do
       it "should unlock the document and persist it" do
-        subject.should_receive(:locked_by=).with(nil)
+        subject.should_receive(:locked_user=).with(nil)
         subject.should_receive(:locked_at=).with(nil)
         subject.should_receive(:save)
       end
       after { subject.unlock! }
     end
-    describe "#locked?" do
+    describe "#locked_for?" do
       let(:user) { mock(:user) }
       describe "if the document hasn't been locked by any user" do
-        before { subject.stub! locked_by: nil }
-        it { subject.locked?(user).should be_false }
+        before { subject.stub! locked_user: nil }
+        it { subject.should_not be_locked_for(user) }
       end
       describe "if the document has been locked by some user" do
         describe "and the same user is trying to acquire the lock" do
-          before { subject.stub! locked_by: user }
-          it { subject.locked?(user).should be_false }
+          before { subject.stub! locked_user: user }
+          it { subject.should_not be_locked_for(user) }
         end
         describe "and a different user is trying to acquire the lock" do
-          before { subject.stub! locked_by: mock(:another_user) }
+          before { subject.stub! locked_user: mock(:another_user) }
           describe "and the lock time has run out" do
             before { subject.stub! locked_at: 2.hours.ago }
-            it { subject.locked?(user).should be_false }
+            it { subject.should_not be_locked_for(user) }
           end
           describe "and the lock time is still going" do
-            before { subject.stub! locked_at: 30.minutes.ago }
-            it { subject.locked?(user).should be_true }
+            before { subject.stub! locked_at: 30.minutes.ago, :locked_at? => true }
+            it { subject.should be_locked_for(user) }
           end
         end
       end

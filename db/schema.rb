@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20130316002524) do
     t.integer  "previous_document_id"
     t.integer  "incorporated_statement_id"
     t.string   "incorporated_statement_type"
-    t.integer  "locked_by"
+    t.integer  "locked_user_id"
     t.datetime "locked_at"
     t.boolean  "current"
   end
