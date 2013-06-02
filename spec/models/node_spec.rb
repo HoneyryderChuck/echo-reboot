@@ -8,7 +8,6 @@ describe Node do
     it { should have_many(:improvements) }
     it { should have_many(:pro_arguments) }
     it { should have_many(:contra_arguments) }
-    it { should have_many(:background_infos) }
   end
 
   describe "validations" do

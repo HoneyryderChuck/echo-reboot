@@ -5,7 +5,6 @@ class Node < ActiveRecord::Base
   has_many :improvements, dependent: :destroy
   has_many :pro_arguments, dependent: :destroy
   has_many :contra_arguments, dependent: :destroy
-  has_many :background_infos, dependent: :destroy
 
   has_many :documents, inverse_of: :node, dependent: :destroy
   has_many :authors, through: :documents do
@@ -60,6 +59,6 @@ class Node < ActiveRecord::Base
   end
 
   def destroy
-    super unless %w(questions proposals improvements pro_arguments contra_arguments background_infos).any? { |a| self.send(a).count > 0 }
+    super unless %w(questions proposals improvements pro_arguments contra_arguments).any? { |a| self.send(a).count > 0 }
   end
 end

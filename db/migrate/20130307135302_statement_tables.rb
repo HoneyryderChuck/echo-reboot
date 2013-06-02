@@ -35,9 +35,8 @@ class StatementTables < ActiveRecord::Migration
       t.timestamps
     end
     create_table :background_infos do |t|
-      t.references :statement, polymorphic: true, null: false
+      t.references :content, polymorphic: true, null: false
       t.references :creator
-      t.references :node
       t.string :info_type_code,       limit: 15
       t.string :external_url,         limit: 500
       t.timestamps

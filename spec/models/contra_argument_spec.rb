@@ -5,7 +5,6 @@ describe ContraArgument do
   describe "associations" do
     it { should belong_to(:proposal) }
     it { should have_and_belong_to_many(:alternatives) }
-    it { should have_many(:background_infos) }
     it { should have_many(:follow_up_questions) }
   end
 
